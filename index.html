@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,15 +11,20 @@
             box-shadow: 0 4px 20px 0 rgba(120, 190, 109, 0.5), 0 1.5px 6px 0 rgba(120, 190, 109, 0.25);
             transition: box-shadow 0.3s;
         }
+
         .card {
             transition: box-shadow 0.3s;
         }
+
         /* Make each section full screen height minus navbar */
-        #home, #about, #recipe {
+        #home,
+        #about,
+        #recipe {
             min-height: 100vh;
             display: flex;
             align-items: center;
         }
+
         /* Sticky navbar */
         .navbar {
             position: sticky;
@@ -27,12 +33,14 @@
             transition: background 0.3s, box-shadow 0.3s;
             background: #78be6d !important;
         }
+
         .navbar.scrolled {
             background: white !important;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="main-navbar">
@@ -58,7 +66,8 @@
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="spa-section w-100 bg-light" style="display:flex; align-items:center; justify-content:center; min-height:100vh;">
+    <section id="home" class="spa-section w-100 bg-light"
+        style="display:flex; align-items:center; justify-content:center; min-height:100vh;">
         <div class="text-center w-100" style="width:100vw;">
             <div class="container" style="max-width:100vw;">
                 <h1 class="display-4">
@@ -66,7 +75,8 @@
                         Sattori
                     </span>
                 </h1>
-                <p class="lead">Experience the art of matcha with Sattori - premium, authentic Japanese matcha for a mindful lifestyle.</p>
+                <p class="lead">Experience the art of matcha with Sattori - premium, authentic Japanese matcha for a
+                    mindful lifestyle.</p>
                 <a href="#" class="btn btn-success btn-lg">Shop Matcha</a>
             </div>
         </div>
@@ -77,18 +87,38 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" class="rounded-circle img-fluid" alt="Satori Matcha">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                        class="rounded-circle img-fluid" alt="Sattori Matcha">
                 </div>
                 <div class="col-md-8">
-                    <h1>Welcome to Satori Matcha</h1>
+                    <h1>Sattori - My Matcha Story</h1>
                     <p class="lead">
-                        Satori Matcha is dedicated to bringing you the finest, ceremonial-grade matcha sourced directly from Japan. Our passion is to share the art, tradition, and health benefits of authentic matcha with tea lovers around the world.
+                        I didn't discover matcha in some faraway Japanese temple—it happened in Pune.<br>
+                        A small café, a quiet moment, and a cup of something bright green that tasted… different.
+                        Smooth, earthy, calming. I didn't know then that it would become such a grounding force in my
+                        life. 
+                    </p>
+                    <p class="lead">
+                        Matcha felt like more than a drink. It was a ritual—something that helped me slow down, find
+                        focus, and feel clear without the chaos that coffee left behind.
+                    </p>
+                    <p class="lead">
+                        But I struggled to find that same experience again. Most matcha brands felt too bitter, too
+                        clinical, or just didn't carry the soul of what I'd tasted. That's when the idea sparked:<br>
+                        What if I created a matcha brand that was rooted in mindfulness, but fit our fast-paced
+                        lives?<br>
+                        That honored tradition, but made space for flavor, creativity, and play.
+                    </p>
+                    <p class="lead">
+                        And that's how Sattori was born.<br>
+                        Not just matcha—but a moment. A pause. A quiet kind of power.
                     </p>
                     <ul class="list-unstyled">
-                        <li><strong>Email:</strong> hello@satorimatcha.com</li>
-                        <li><strong>Location:</strong> Kyoto, Japan</li>
+                        <li><strong>Email:</strong> support@sattorimatcha.com</li>
+                        <li><strong>Phone:</strong> +91 91378 95434</li>
+                        <li><strong>Location:</strong> Nagpur, India</li>
                     </ul>
-                    <a href="mailto:hello@satorimatcha.com" class="btn btn-success mt-3">Contact Us</a>
+                    <a href="mailto:support@sattorimatcha.com" class="btn btn-success mt-3">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -102,10 +132,13 @@
                 <!-- Card 1 -->
                 <div class="col">
                     <div class="card h-100">
-                        <img src="https://cdn.loveandlemons.com/wp-content/uploads/2023/06/iced-matcha-latte-recipe-580x743.jpg" class="card-img-top object-fit-cover" alt="Matcha Latte" style="height: 250px; object-fit: cover;">
+                        <img src="https://cdn.loveandlemons.com/wp-content/uploads/2023/06/iced-matcha-latte-recipe-580x743.jpg"
+                            class="card-img-top object-fit-cover" alt="Matcha Latte"
+                            style="height: 250px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">Matcha Latte</h5>
-                            <p class="card-text">Creamy and smooth matcha latte made with milk and ceremonial grade matcha.</p>
+                            <p class="card-text">Creamy and smooth matcha latte made with milk and ceremonial grade
+                                matcha.</p>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">5 min | Easy</small>
@@ -115,10 +148,12 @@
                 <!-- Card 2 -->
                 <div class="col">
                     <div class="card h-100">
-                        <img src="https://www.justonecookbook.com/wp-content/uploads/2023/07/Iced-Matcha-Latte-0331-V.jpg" class="card-img-top" alt="Iced Matcha" style="height: 250px; object-fit: cover;">
+                        <img src="https://www.justonecookbook.com/wp-content/uploads/2023/07/Iced-Matcha-Latte-0331-V.jpg"
+                            class="card-img-top" alt="Iced Matcha" style="height: 250px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">Iced Matcha</h5>
-                            <p class="card-text">Refreshing iced matcha drink, perfect for hot days. Just add ice and enjoy!</p>
+                            <p class="card-text">Refreshing iced matcha drink, perfect for hot days. Just add ice and
+                                enjoy!</p>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">3 min | Easy</small>
@@ -128,10 +163,12 @@
                 <!-- Card 3 -->
                 <div class="col">
                     <div class="card h-100">
-                        <img src="https://thechestnutbakery.com/wp-content/uploads/2022/04/easy-vegan-matcha-cookies-1024x1536.jpg.webp" class="card-img-top" alt="Matcha Cookies" style="height: 250px; object-fit: cover;">
+                        <img src="https://thechestnutbakery.com/wp-content/uploads/2022/04/easy-vegan-matcha-cookies-1024x1536.jpg.webp"
+                            class="card-img-top" alt="Matcha Cookies" style="height: 250px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">Matcha Cookies</h5>
-                            <p class="card-text">Delicious matcha-infused cookies with a subtle earthy flavor and a sweet finish.</p>
+                            <p class="card-text">Delicious matcha-infused cookies with a subtle earthy flavor and a
+                                sweet finish.</p>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">30 min | Medium</small>
@@ -155,9 +192,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
     <script>
         // Highlight nav and section based on scroll position
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Show all sections for scrolling
-            document.querySelectorAll('.spa-section').forEach(function(sec) {
+            document.querySelectorAll('.spa-section').forEach(function (sec) {
                 sec.classList.add('active');
             });
 
@@ -181,7 +218,7 @@
 
                 // Navbar background on scroll
                 const navbar = document.getElementById('main-navbar');
-                if(window.scrollY > 30) {
+                if (window.scrollY > 30) {
                     navbar.classList.add('scrolled');
                 } else {
                     navbar.classList.remove('scrolled');
@@ -193,7 +230,7 @@
 
             // Smooth scroll for nav links
             document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', function(e) {
+                link.addEventListener('click', function (e) {
                     const section = this.id.replace('nav-', '');
                     const el = document.getElementById(section);
                     if (el) {
@@ -206,17 +243,17 @@
                 });
             });
 
-            $(document).ready(function() {
+            $(document).ready(function () {
                 const brand = $('#brand-animated');
                 const brandColor = '#78be6d'; // Original brand color
-                brand.on('mouseenter', function() {
+                brand.on('mouseenter', function () {
                     brand.html('<b>Awakening</b>');
                     brand.css({
                         'color': brandColor,
                         'transition': 'color 0.3s, transform 0.3s',
                     });
                 });
-                brand.on('mouseleave', function() {
+                brand.on('mouseleave', function () {
                     brand.html('Sattori');
                     brand.css({
                         'color': 'black',
@@ -227,4 +264,5 @@
         });
     </script>
 </body>
+
 </html>
