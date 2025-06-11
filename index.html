@@ -84,6 +84,28 @@
                 align-items: stretch;
             }
         }
+
+        /* Parallax wavy background for home section */
+        #home {
+            position: relative;
+            overflow: hidden;
+            background: var(--sattori-beige, #f7f6f2);
+        }
+        .wavy-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 120vh;
+            z-index: 0;
+            background: none;
+            pointer-events: none;
+        }
+        #home .container,
+        #home .text-center {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 
@@ -113,6 +135,19 @@
 
     <!-- Home Section -->
     <section id="home" class="spa-section" style="background: var(--sattori-beige, #f7f6f2); display:flex; align-items:center; justify-content:center;">
+        <!-- Wavy SVG Background -->
+        <div class="wavy-bg" id="wavy-bg">
+            <svg width="100%" height="100%" viewBox="0 0 1920 400" preserveAspectRatio="none" style="display:block;">
+                <path d="M0,320 Q480,400 960,320 T1920,320 L1920,400 L0,400 Z"
+                      fill="url(#greenGradient)" opacity="0.7"/>
+                <defs>
+                    <linearGradient id="greenGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="var(--sattori-light-green, #78be6d)" />
+                        <stop offset="100%" stop-color="var(--sattori-green, #4b8d47)" />
+                    </linearGradient>
+                </defs>
+            </svg>
+        </div>
         <div class="text-center w-100">
             <div class="container" style="max-width:100vw;">
                 <h1 class="display-4">
@@ -129,6 +164,63 @@
         </div>
     </section>
 
+    <!-- Store Section -->
+    <section id="store" class="spa-section" style="background: var(--sattori-accent, #e6eecf); display:flex; align-items:center; justify-content:center;">
+        <div class="container py-5">
+            <h1 class="mb-4 text-center" style="color: var(--sattori-green, #4b8d47);">Sattori Store</h1>
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <!-- Matcha Jar -->
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Matcha Jar" style="height:180px;object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Ceremonial Matcha Jar</h5>
+                            <p class="card-text">Premium Japanese matcha in a beautiful airtight jar. 40g.</p>
+                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹899</p>
+                            <a href="#" class="btn btn-success" style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bamboo Whisk -->
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Bamboo Whisk" style="height:180px;object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Bamboo Whisk (Chasen)</h5>
+                            <p class="card-text">Handcrafted bamboo whisk for the perfect frothy matcha.</p>
+                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹499</p>
+                            <a href="#" class="btn btn-success" style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Whisk Holder -->
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Whisk Holder" style="height:180px;object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Porcelain Whisk Holder</h5>
+                            <p class="card-text">Keep your whisk in perfect shape with this elegant holder.</p>
+                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹299</p>
+                            <a href="#" class="btn btn-success" style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Matcha Cup -->
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Matcha Cup" style="height:180px;object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Handmade Matcha Cup</h5>
+                            <p class="card-text">Artisan ceramic cup for an authentic matcha experience.</p>
+                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹599</p>
+                            <a href="#" class="btn btn-success" style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- About Section -->
     <section id="about" class="spa-section">
         <div class="container py-5">
@@ -292,6 +384,16 @@
                     brand.textContent = 'Sattori';
                     brand.classList.remove('brand-highlight');
                 });
+            }
+        });
+
+        // Parallax effect for wavy background
+        window.addEventListener('scroll', function () {
+            const wavy = document.getElementById('wavy-bg');
+            if (wavy) {
+                // Move the wave slower than scroll for parallax
+                let offset = window.scrollY * 0.3;
+                wavy.style.transform = `translateY(${offset}px)`;
             }
         });
     </script>
