@@ -115,6 +115,17 @@
             align-items: center;
             justify-content: center;
         }
+
+        /* Animate card on hover */
+        .recipe-card .card {
+            transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
+            cursor: pointer;
+        }
+        .recipe-card .card:hover {
+            transform: scale(1.04) translateY(-8px);
+            box-shadow: 0 8px 32px 0 rgba(120, 190, 109, 0.18), 0 2px 8px 0 rgba(120, 190, 109, 0.10);
+            z-index: 2;
+        }
     </style>
 </head>
 
@@ -234,6 +245,18 @@
                         </div>
                     </div>
                 </div>
+                <!-- Branch Stickers -->
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Branch Stickers" style="height:180px;object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Branch Stickers</h5>
+                            <p class="card-text">Decorative matcha-inspired branch stickers for your bottles, laptops, and more. Set of 5.</p>
+                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹149</p>
+                            <a href="#" class="btn btn-success" style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -333,7 +356,8 @@
                 <button class="btn btn-sm btn-outline-success" data-filter="dairy" type="button">Dairy Based</button>
                 <button class="btn btn-sm btn-outline-success" data-filter="glutenfree" type="button">Gluten Free</button>
             </div>
-            <div class="row row-cols-1 row-cols-md-3 g-4" id="recipe-list">
+            <!-- Center the recipe grid -->
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center" id="recipe-list" style="display: flex; justify-content: center;">
                 <!-- Card 1 -->
                 <div class="col recipe-card" data-tags="iced dairy">
                     <div class="card h-100">
@@ -381,6 +405,21 @@
             </div>
         </div>
     </section>
+
+    <!-- Recipe Detail Modal -->
+    <div class="modal fade" id="recipeModal" tabindex="-1" aria-labelledby="recipeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" style="border-radius: 1.5rem;">
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="recipeModalLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="recipeModalBody">
+            <!-- Recipe details will be injected here -->
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer class="text-white text-center py-3 mt-auto" style="background: var(--sattori-green, #4b8d47);">
@@ -506,6 +545,101 @@
                 });
             });
         });
+
+        document.addEventListener('DOMContentLoaded', function () {
+    // Recipe details data (add more as needed)
+    const recipeDetails = {
+        "Matcha Latte": {
+            img: "https://cdn.loveandlemons.com/wp-content/uploads/2023/06/iced-matcha-latte-recipe-580x743.jpg",
+            title: "Matcha Latte",
+            time: "5 min | Easy",
+            description: "Creamy and smooth matcha latte made with milk and ceremonial grade matcha.",
+            ingredients: [
+                "1 tsp ceremonial grade matcha",
+                "60ml hot water (not boiling)",
+                "200ml milk (dairy or plant-based)",
+                "1-2 tsp sweetener (optional)"
+            ],
+            steps: [
+                "Sift matcha into a bowl.",
+                "Add hot water and whisk until frothy.",
+                "Heat and froth milk, then pour over matcha.",
+                "Sweeten to taste and enjoy."
+            ]
+        },
+        "Iced Matcha": {
+            img: "https://www.justonecookbook.com/wp-content/uploads/2023/07/Iced-Matcha-Latte-0331-V.jpg",
+            title: "Iced Matcha",
+            time: "3 min | Easy",
+            description: "Refreshing iced matcha drink, perfect for hot days. Just add ice and enjoy!",
+            ingredients: [
+                "1 tsp matcha powder",
+                "60ml hot water",
+                "Ice cubes",
+                "150ml cold water or milk",
+                "Sweetener (optional)"
+            ],
+            steps: [
+                "Sift matcha into a cup.",
+                "Add hot water and whisk until smooth.",
+                "Fill glass with ice, pour matcha over.",
+                "Add cold water or milk, stir and enjoy."
+            ]
+        },
+        "Matcha Cookies": {
+            img: "https://thechestnutbakery.com/wp-content/uploads/2022/04/easy-vegan-matcha-cookies-1024x1536.jpg.webp",
+            title: "Matcha Cookies",
+            time: "30 min | Medium",
+            description: "Delicious matcha-infused cookies with a subtle earthy flavor and a sweet finish.",
+            ingredients: [
+                "1 cup flour",
+                "1 tbsp matcha powder",
+                "1/2 cup sugar",
+                "1/2 cup butter (softened)",
+                "1 egg",
+                "1/2 tsp baking powder",
+                "Pinch of salt"
+            ],
+            steps: [
+                "Preheat oven to 170°C (340°F).",
+                "Cream butter and sugar, add egg.",
+                "Mix in flour, matcha, baking powder, salt.",
+                "Shape dough, place on tray.",
+                "Bake 12-15 min until edges are golden."
+            ]
+        }
+    };
+
+    // Card hover: show pointer and scale (handled by CSS above)
+
+    // Card click: show modal with details
+    document.querySelectorAll('.recipe-card .card').forEach(card => {
+        card.addEventListener('click', function () {
+            const title = this.querySelector('.card-title').textContent.trim();
+            const data = recipeDetails[title];
+            if (data) {
+                document.getElementById('recipeModalLabel').textContent = data.title;
+                document.getElementById('recipeModalBody').innerHTML = `
+                    <div class="row">
+                        <div class="col-md-5 mb-3 mb-md-0">
+                            <img src="${data.img}" alt="${data.title}" class="img-fluid rounded shadow-sm" style="width:100%;">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="mb-1"><strong>Time:</strong> ${data.time}</p>
+                            <p>${data.description}</p>
+                            <h6>Ingredients:</h6>
+                            <ul>${data.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+                            <h6>Steps:</h6>
+                            <ol>${data.steps.map(s => `<li>${s}</li>`).join('')}</ol>
+                        </div>
+                    </div>
+                `;
+                const modal = new bootstrap.Modal(document.getElementById('recipeModal'));
+                modal.show();
+            }
+        });
+    });
+});
     </script>
 </body>
 
