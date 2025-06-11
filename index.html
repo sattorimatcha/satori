@@ -144,6 +144,9 @@
                         <a class="nav-link" href="#about" id="nav-about">About</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="#types" id="nav-types">Types</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#recipe" id="nav-recipe">Recipe</a>
                     </li>
                 </ul>
@@ -236,8 +239,11 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="spa-section">
-        <div class="container py-5">
+    <section id="about" class="spa-section" style="position:relative; overflow:hidden;">
+        <!-- Parallax mountain background -->
+        <img src="mountain.png" alt="Mountains" id="about-mountain-bg"
+             style="position:absolute; left:50vh; bottom: -60vh; width:100%; max-width:none; z-index:0; opacity:0.18; pointer-events:none; transition:transform 0.2s;">
+        <div class="container py-5" style="position:relative; z-index:1;">
             <div class="row align-items-center">
                 <div class="col-md-4 text-center mb-4 mb-md-0">
                     <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
@@ -268,6 +274,48 @@
                         <li><strong>Location:</strong> Nagpur, India</li>
                     </ul>
                     <a href="mailto:support@sattorimatcha.com" class="btn btn-success mt-2">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Types of Matcha Section -->
+    <section id="types" class="spa-section" style="background: var(--sattori-beige, #f7f6f2); flex-direction: column;">
+        <div class="container py-5">
+            <h1 class="mb-4 text-center" style="color: var(--sattori-green, #4b8d47);">Types of Matcha</h1>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Ceremonial Grade -->
+                <div class="col">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: var(--sattori-green, #4b8d47);">Ceremonial Grade</h5>
+                            <p class="card-text">
+                                The highest quality matcha, made from the youngest tea leaves. Vibrant green, naturally sweet, and ideal for traditional tea ceremonies or drinking straight.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Premium Grade -->
+                <div class="col">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: var(--sattori-dark-green, #357a38);">Premium Grade</h5>
+                            <p class="card-text">
+                                Excellent for daily drinking and lattes. Balanced flavor, smooth texture, and a bright green color. Great for both sipping and mixing.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Culinary Grade -->
+                <div class="col">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: var(--sattori-brown, #a68b6b);">Culinary Grade</h5>
+                            <p class="card-text">
+                                Perfect for cooking and baking. Slightly more robust and earthy, it adds vibrant color and flavor to smoothies, desserts, and recipes.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -343,7 +391,7 @@
             });
 
             function onScroll() {
-                const sections = ['home', 'store', 'about', 'recipe'];
+                const sections = ['home', 'store', 'about', 'types', 'recipe'];
                 let current = sections[0];
                 const scrollPos = window.scrollY + 80; // Offset for navbar
 
@@ -408,6 +456,25 @@
                 // Move the wave slower than scroll for parallax
                 let offset = window.scrollY * 0.3;
                 wavy.style.transform = `translateY(${offset}px)`;
+            }
+        });
+
+        // Parallax effect for about section mountain background
+        window.addEventListener('scroll', function () {
+            const about = document.getElementById('about');
+            const mountain = document.getElementById('about-mountain-bg');
+            if (about && mountain) {
+            const rect = about.getBoundingClientRect();
+            // Only apply if section is in viewport
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                // Parallax: move slower than scroll
+                const scrolled = Math.max(0, window.innerHeight + rect.top);
+                // Zoom in effect: scale from 1 to 1.15 as you scroll through the section
+                const sectionHeight = rect.height || about.offsetHeight;
+                const visible = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + sectionHeight)));
+                const scale = 1 + visible * 0.15;
+                mountain.style.transform = `translateY(${scrolled * 0.1}px) scale(${scale})`;
+            }
             }
         });
     </script>
