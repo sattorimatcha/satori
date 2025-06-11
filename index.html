@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sattori</title>
+    <!-- Favicon for title bar -->
+    <link rel="icon" type="image/png" href="mountain.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="fonts.css" rel="stylesheet">
     <link href="colors.css" rel="stylesheet">
@@ -106,6 +108,13 @@
             position: relative;
             z-index: 1;
         }
+
+        .spa-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 
@@ -113,7 +122,13 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light poppins-semibold" id="main-navbar">
         <div class="container">
-            <a class="navbar-brand" href="#home">Sattori</a>
+            <!-- Mountain logo as PNG -->
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+                <span style="display:inline-block; width:32px; height:32px;">
+                    <img src="mountain.png" alt="Sattori Logo" style="width:32px; height:32px; object-fit:contain;">
+                </span>
+                Sattori
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -121,6 +136,9 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#home" id="nav-home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#store" id="nav-store">Store</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about" id="nav-about">About</a>
@@ -134,7 +152,7 @@
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="spa-section" style="background: var(--sattori-beige, #f7f6f2); display:flex; align-items:center; justify-content:center;">
+    <section id="home" class="spa-section" style="background: var(--sattori-beige, #f7f6f2);">
         <!-- Wavy SVG Background -->
         <div class="wavy-bg" id="wavy-bg">
             <svg width="100%" height="100%" viewBox="0 0 1920 400" preserveAspectRatio="none" style="display:block;">
@@ -155,17 +173,13 @@
                 </h1>
                 <p class="lead">Experience the art of matcha with Sattori - premium, authentic Japanese matcha for a mindful lifestyle.
                 </p>
-                <p class="fw-semibold fs-4 mt-4 mb-4" style="color: var(--sattori-green, #4b8d47);">
-                    Sattori means 'Awakening'.<br>
-                    We blend tradition with wellness - rooted in Japan, reimagined for modern rituals.
-                </p>
-                <a href="#" class="btn btn-success btn-lg" style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Shop Matcha</a>
+                <a href="#store" class="btn btn-success btn-lg" style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Shop Matcha</a>
             </div>
         </div>
     </section>
 
     <!-- Store Section -->
-    <section id="store" class="spa-section" style="background: var(--sattori-accent, #e6eecf); display:flex; align-items:center; justify-content:center;">
+    <section id="store" class="spa-section" style="background: var(--sattori-accent, #e6eecf);">
         <div class="container py-5">
             <h1 class="mb-4 text-center" style="color: var(--sattori-green, #4b8d47);">Sattori Store</h1>
             <div class="row row-cols-1 row-cols-md-4 g-4">
@@ -220,7 +234,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- About Section -->
     <section id="about" class="spa-section">
         <div class="container py-5">
@@ -329,7 +343,7 @@
             });
 
             function onScroll() {
-                const sections = ['home', 'about', 'recipe'];
+                const sections = ['home', 'store', 'about', 'recipe'];
                 let current = sections[0];
                 const scrollPos = window.scrollY + 80; // Offset for navbar
 
