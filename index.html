@@ -4,11 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Satori</title>
+    <title>Sattori</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="colors.css" rel="stylesheet">
     <style>
         .card:hover {
-            box-shadow: 0 4px 20px 0 rgba(120, 190, 109, 0.5), 0 1.5px 6px 0 rgba(120, 190, 109, 0.25);
+            box-shadow: 0 4px 20px 0 var(--sattori-light-green, #78be6d), 0 1.5px 6px 0 var(--sattori-light-green, #78be6d, 0.25);
             transition: box-shadow 0.3s;
         }
 
@@ -31,21 +33,65 @@
             top: 0;
             z-index: 1030;
             transition: background 0.3s, box-shadow 0.3s;
-            background: #78be6d !important;
+            background: var(--sattori-green, #4b8d47) !important;
+        }
+
+        .navbar-brand {
+            color: var(--sattori-white, #ffffff) !important;
+            font-weight: bold;
         }
 
         .navbar.scrolled {
-            background: white !important;
+            background: var(--sattori-white, #ffffff) !important;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar.scrolled .navbar-brand {
+            color: var(--sattori-green, #4b8d47) !important;
+        }
+
+        .navbar-nav .nav-link, .navbar-nav .nav-link.show {
+            color: var(--sattori-white, #ffffff) !important;
+            font-weight: 200;
+        }
+
+        .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+            color: var(--sattori-white, #ffffff) !important;
+            font-weight: bold;
+        }
+        
+
+        .navbar.scrolled .navbar-nav .nav-link, .navbar-nav .nav-link.show {
+            font-weight: 200;
+            color: var(--sattori-green, #4b8d47) !important;
+        }
+
+        .navbar.scrolled .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+            color: var(--sattori-green, #4b8d47) !important;
+            font-weight: bold;
+        }
+
+        .brand-highlight {
+            color: var(--sattori-light-green, #78be6d);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            #home,
+            #about,
+            #recipe {
+                flex-direction: column;
+                align-items: stretch;
+            }
         }
     </style>
 </head>
 
-<body>
+<body class="poppins-regular">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="main-navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light poppins-semibold" id="main-navbar">
         <div class="container">
-            <a class="navbar-brand">Sattori</a>
+            <a class="navbar-brand" href="#home">Sattori</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -66,18 +112,19 @@
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="spa-section w-100 bg-light"
-        style="display:flex; align-items:center; justify-content:center; min-height:100vh;">
-        <div class="text-center w-100" style="width:100vw;">
+    <section id="home" class="spa-section" style="background: var(--sattori-beige, #f7f6f2); display:flex; align-items:center; justify-content:center;">
+        <div class="text-center w-100">
             <div class="container" style="max-width:100vw;">
                 <h1 class="display-4">
-                    Welcome to <span id="brand-animated" class="fw-bolder">
-                        Sattori
-                    </span>
+                    Welcome to <span id="brand-animated" class="fw-bolder">Sattori</span>
                 </h1>
-                <p class="lead">Experience the art of matcha with Sattori - premium, authentic Japanese matcha for a
-                    mindful lifestyle.</p>
-                <a href="#" class="btn btn-success btn-lg">Shop Matcha</a>
+                <p class="lead">Experience the art of matcha with Sattori - premium, authentic Japanese matcha for a mindful lifestyle.
+                </p>
+                <p class="fw-semibold fs-4 mt-4 mb-4" style="color: var(--sattori-green, #4b8d47);">
+                    Sattori means 'Awakening'.<br>
+                    We blend tradition with wellness - rooted in Japan, reimagined for modern rituals.
+                </p>
+                <a href="#" class="btn btn-success btn-lg" style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Shop Matcha</a>
             </div>
         </div>
     </section>
@@ -91,34 +138,30 @@
                         class="rounded-circle img-fluid" alt="Sattori Matcha">
                 </div>
                 <div class="col-md-8">
-                    <h1>Sattori - My Matcha Story</h1>
-                    <p class="lead">
+                    <h1 class="mb-3">Sattori - My Matcha Story</h1>
+                    <p class="lead mb-2">
                         I didn't discover matcha in some faraway Japanese temple—it happened in Pune.<br>
                         A small café, a quiet moment, and a cup of something bright green that tasted… different.
-                        Smooth, earthy, calming. I didn't know then that it would become such a grounding force in my
-                        life. 
+                        Smooth, earthy, calming. I didn't know then that it would become such a grounding force in my life.
                     </p>
-                    <p class="lead">
-                        Matcha felt like more than a drink. It was a ritual—something that helped me slow down, find
-                        focus, and feel clear without the chaos that coffee left behind.
+                    <p class="lead mb-2">
+                        Matcha felt like more than a drink. It was a ritual—something that helped me slow down, find focus, and feel clear without the chaos that coffee left behind.
                     </p>
-                    <p class="lead">
-                        But I struggled to find that same experience again. Most matcha brands felt too bitter, too
-                        clinical, or just didn't carry the soul of what I'd tasted. That's when the idea sparked:<br>
-                        What if I created a matcha brand that was rooted in mindfulness, but fit our fast-paced
-                        lives?<br>
+                    <p class="lead mb-2">
+                        But I struggled to find that same experience again. Most matcha brands felt too bitter, too clinical, or just didn't carry the soul of what I'd tasted. That's when the idea sparked:<br>
+                        What if I created a matcha brand that was rooted in mindfulness, but fit our fast-paced lives?<br>
                         That honored tradition, but made space for flavor, creativity, and play.
                     </p>
-                    <p class="lead">
+                    <p class="lead mb-4">
                         And that's how Sattori was born.<br>
                         Not just matcha—but a moment. A pause. A quiet kind of power.
                     </p>
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled mb-3">
                         <li><strong>Email:</strong> support@sattorimatcha.com</li>
                         <li><strong>Phone:</strong> +91 91378 95434</li>
                         <li><strong>Location:</strong> Nagpur, India</li>
                     </ul>
-                    <a href="mailto:support@sattorimatcha.com" class="btn btn-success mt-3">Contact Us</a>
+                    <a href="mailto:support@sattorimatcha.com" class="btn btn-success mt-2">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -137,8 +180,7 @@
                             style="height: 250px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">Matcha Latte</h5>
-                            <p class="card-text">Creamy and smooth matcha latte made with milk and ceremonial grade
-                                matcha.</p>
+                            <p class="card-text">Creamy and smooth matcha latte made with milk and ceremonial grade matcha.</p>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">5 min | Easy</small>
@@ -152,8 +194,7 @@
                             class="card-img-top" alt="Iced Matcha" style="height: 250px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">Iced Matcha</h5>
-                            <p class="card-text">Refreshing iced matcha drink, perfect for hot days. Just add ice and
-                                enjoy!</p>
+                            <p class="card-text">Refreshing iced matcha drink, perfect for hot days. Just add ice and enjoy!</p>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">3 min | Easy</small>
@@ -167,8 +208,7 @@
                             class="card-img-top" alt="Matcha Cookies" style="height: 250px; object-fit: cover;">
                         <div class="card-body">
                             <h5 class="card-title">Matcha Cookies</h5>
-                            <p class="card-text">Delicious matcha-infused cookies with a subtle earthy flavor and a
-                                sweet finish.</p>
+                            <p class="card-text">Delicious matcha-infused cookies with a subtle earthy flavor and a sweet finish.</p>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">30 min | Medium</small>
@@ -181,15 +221,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white text-center py-3 mt-auto">
+    <footer class="text-white text-center py-3 mt-auto" style="background: var(--sattori-green, #4b8d47);">
         <div class="container">
             &copy; 2024 Sattori. All rights reserved.
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
     <script>
         // Highlight nav and section based on scroll position
         document.addEventListener('DOMContentLoaded', function () {
@@ -243,24 +281,18 @@
                 });
             });
 
-            $(document).ready(function () {
-                const brand = $('#brand-animated');
-                const brandColor = '#78be6d'; // Original brand color
-                brand.on('mouseenter', function () {
-                    brand.html('<b>Awakening</b>');
-                    brand.css({
-                        'color': brandColor,
-                        'transition': 'color 0.3s, transform 0.3s',
-                    });
+            // Brand animation
+            const brand = document.getElementById('brand-animated');
+            if (brand) {
+                brand.addEventListener('mouseenter', function () {
+                    brand.textContent = 'Awakening';
+                    brand.classList.add('brand-highlight');
                 });
-                brand.on('mouseleave', function () {
-                    brand.html('Sattori');
-                    brand.css({
-                        'color': 'black',
-                        'transition': 'color 0.3s, transform 0.3s',
-                    });
+                brand.addEventListener('mouseleave', function () {
+                    brand.textContent = 'Sattori';
+                    brand.classList.remove('brand-highlight');
                 });
-            });
+            }
         });
     </script>
 </body>
