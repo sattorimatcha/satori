@@ -325,9 +325,17 @@
     <section id="recipe" class="spa-section">
         <div class="container py-5">
             <h1 class="mb-4 text-center">Matcha Recipes</h1>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <!-- Filter Chips -->
+            <div class="d-flex justify-content-center mb-4 flex-wrap gap-2" id="recipe-filters">
+                <button class="btn btn-sm btn-outline-success active" data-filter="all" type="button">All</button>
+                <button class="btn btn-sm btn-outline-success" data-filter="iced" type="button">Iced</button>
+                <button class="btn btn-sm btn-outline-success" data-filter="hot" type="button">Hot</button>
+                <button class="btn btn-sm btn-outline-success" data-filter="dairy" type="button">Dairy Based</button>
+                <button class="btn btn-sm btn-outline-success" data-filter="glutenfree" type="button">Gluten Free</button>
+            </div>
+            <div class="row row-cols-1 row-cols-md-3 g-4" id="recipe-list">
                 <!-- Card 1 -->
-                <div class="col">
+                <div class="col recipe-card" data-tags="iced dairy">
                     <div class="card h-100">
                         <img src="https://cdn.loveandlemons.com/wp-content/uploads/2023/06/iced-matcha-latte-recipe-580x743.jpg"
                             class="card-img-top object-fit-cover" alt="Matcha Latte"
@@ -342,7 +350,7 @@
                     </div>
                 </div>
                 <!-- Card 2 -->
-                <div class="col">
+                <div class="col recipe-card" data-tags="iced glutenfree">
                     <div class="card h-100">
                         <img src="https://www.justonecookbook.com/wp-content/uploads/2023/07/Iced-Matcha-Latte-0331-V.jpg"
                             class="card-img-top" alt="Iced Matcha" style="height: 250px; object-fit: cover;">
@@ -356,7 +364,7 @@
                     </div>
                 </div>
                 <!-- Card 3 -->
-                <div class="col">
+                <div class="col recipe-card" data-tags="hot glutenfree">
                     <div class="card h-100">
                         <img src="https://thechestnutbakery.com/wp-content/uploads/2022/04/easy-vegan-matcha-cookies-1024x1536.jpg.webp"
                             class="card-img-top" alt="Matcha Cookies" style="height: 250px; object-fit: cover;">
@@ -369,7 +377,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Add more cards as needed -->
+                <!-- Add more cards as needed, with appropriate data-tags -->
             </div>
         </div>
     </section>
@@ -476,6 +484,27 @@
                 mountain.style.transform = `translateY(${scrolled * 0.1}px) scale(${scale})`;
             }
             }
+        });
+
+        // Recipe filter chips logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('#recipe-filters button');
+            const recipeCards = document.querySelectorAll('.recipe-card');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.getAttribute('data-filter');
+                    recipeCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-tags').includes(filter)) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
         });
     </script>
 </body>
