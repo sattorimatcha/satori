@@ -145,6 +145,16 @@
             transform: scale(1.15);
         }
 
+        .store-card .card img {
+            transition: transform 0.2s;
+            height: 180px;
+            object-fit: contain;
+        }
+
+        .store-card .card:hover img {
+            transform: scale(1.15);
+        }
+
         /* Product card image hover effect */
         .product-card {
             transition: transform 0.25s cubic-bezier(.4, 2, .6, 1), box-shadow 0.25s;
@@ -223,8 +233,7 @@
                 <p class="lead">Experience the rich tradition and flavor of high-quality Japanese matcha.
                 </p>
                 <a href="#product" class="btn btn-success btn-lg"
-                    style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Shop
-                    Matcha</a>
+                    style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">SHOP NOW</a>
             </div>
         </div>
     </section>
@@ -357,94 +366,94 @@
             <h1 class="mb-4 text-center alcubierre-black" style="color: var(--sattori-black, #050708);">Accessories</h1>
             <div class="row row-cols-1 justify-content-center row-cols-md-4 g-4">
                 <!-- Wooden Cup -->
-                <div class="col">
+                <div class="col store-card">
                     <div class="card h-100 text-center">
-                        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
-                            class="card-img-top" alt="Wooden Cup" style="height:180px;object-fit:cover;">
+                        <img src="woodencup.png"
+                            class="card-img-top" alt="Wooden Cup">
                         <div class="card-body">
                             <h5 class="card-title">Wooden Cup</h5>
                             <p class="card-text">Handcrafted wooden cup for a natural and warm matcha experience.</p>
-                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹499</p>
                             <a href="#" class="btn btn-success"
-                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy
-                                Now</a>
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">
+                                Buy Now ₹499
+                            </a>
                         </div>
                     </div>
                 </div>
                 <!-- Wooden Spoons -->
-                <div class="col">
+                <div class="col store-card">
                     <div class="card h-100 text-center">
-                        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
-                            class="card-img-top" alt="Wooden Spoons" style="height:180px;object-fit:cover;">
+                        <img src="spoon.png"
+                            class="card-img-top" alt="Wooden Spoons">
                         <div class="card-body">
                             <h5 class="card-title">Wooden Spoons</h5>
                             <p class="card-text">Set of 2 wooden spoons, perfect for scooping matcha or stirring drinks.
                             </p>
-                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹199</p>
                             <a href="#" class="btn btn-success"
-                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy
-                                Now</a>
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">
+                                Buy Now ₹199
+                            </a>
                         </div>
                     </div>
                 </div>
                 <!-- Stickers (Set of 8) -->
-                <div class="col">
+                <div class="col store-card">
                     <div class="card h-100 text-center">
-                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
-                            class="card-img-top" alt="Stickers (Set of 8)" style="height:180px;object-fit:cover;">
+                        <img src="stickers.png"
+                            class="card-img-top" alt="Stickers (Set of 8)">
                         <div class="card-body">
                             <h5 class="card-title">Stickers (Set of 8)</h5>
                             <p class="card-text">Decorative matcha-inspired stickers for bottles, laptops, and more. Set
                                 of 8.</p>
-                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹199</p>
                             <a href="#" class="btn btn-success"
-                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy
-                                Now</a>
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">
+                                Buy Now ₹199
+                            </a>
                         </div>
                     </div>
                 </div>
                 <!-- Bamboo Whisk -->
-                <div class="col">
+                <div class="col store-card">
                     <div class="card h-100 text-center">
-                        <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80"
-                            class="card-img-top" alt="Bamboo Whisk" style="height:180px;object-fit:cover;">
+                        <img src="bamboowhisk.png"
+                            class="card-img-top" alt="Bamboo Whisk">
                         <div class="card-body">
                             <h5 class="card-title">Bamboo Whisk</h5>
                             <p class="card-text">Traditional bamboo whisk (chasen) for perfectly frothy matcha.</p>
-                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹399</p>
                             <a href="#" class="btn btn-success"
-                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy
-                                Now</a>
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">
+                                Buy Now ₹399
+                            </a>
                         </div>
                     </div>
                 </div>
                 <!-- Ceramic Whisk Holder -->
-                <div class="col">
+                <div class="col store-card">
                     <div class="card h-100 text-center">
-                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
-                            class="card-img-top" alt="Ceramic Whisk Holder" style="height:180px;object-fit:cover;">
+                        <img src="holder.png"
+                            class="card-img-top" alt="Ceramic Whisk Holder">
                         <div class="card-body">
                             <h5 class="card-title">Ceramic Whisk Holder</h5>
                             <p class="card-text">Elegant ceramic holder to keep your whisk in perfect shape.</p>
-                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹299</p>
                             <a href="#" class="btn btn-success"
-                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy
-                                Now</a>
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">
+                                Buy Now ₹299
+                            </a>
                         </div>
                     </div>
                 </div>
                 <!-- Ceramic Bowl -->
-                <div class="col">
+                <div class="col store-card">
                     <div class="card h-100 text-center">
-                        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
-                            class="card-img-top" alt="Ceramic Bowl" style="height:180px;object-fit:cover;">
+                        <img src="bowl.png"
+                            class="card-img-top" alt="Ceramic Bowl">
                         <div class="card-body">
                             <h5 class="card-title">Ceramic Bowl</h5>
                             <p class="card-text">Artisan ceramic bowl for authentic matcha preparation and serving.</p>
-                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹599</p>
                             <a href="#" class="btn btn-success"
-                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy
-                                Now</a>
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">
+                                Buy Now ₹599
+                            </a>
                         </div>
                     </div>
                 </div>
