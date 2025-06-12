@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sattori</title>
     <!-- Favicon for title bar -->
-    <link rel="icon" type="image/png" href="mountain.png">
+    <link rel="icon" type="image/png" href="pictologo@300x.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="fonts.css" rel="stylesheet">
     <link href="colors.css" rel="stylesheet">
@@ -52,23 +52,27 @@
             color: var(--sattori-green, #4b8d47) !important;
         }
 
-        .navbar-nav .nav-link, .navbar-nav .nav-link.show {
+        .navbar-nav .nav-link,
+        .navbar-nav .nav-link.show {
             color: var(--sattori-white, #ffffff) !important;
             font-weight: 200;
         }
 
-        .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link.show {
             color: var(--sattori-white, #ffffff) !important;
             font-weight: bold;
         }
-        
 
-        .navbar.scrolled .navbar-nav .nav-link, .navbar-nav .nav-link.show {
+
+        .navbar.scrolled .navbar-nav .nav-link,
+        .navbar-nav .nav-link.show {
             font-weight: 200;
             color: var(--sattori-green, #4b8d47) !important;
         }
 
-        .navbar.scrolled .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+        .navbar.scrolled .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link.show {
             color: var(--sattori-green, #4b8d47) !important;
             font-weight: bold;
         }
@@ -79,6 +83,7 @@
         }
 
         @media (max-width: 768px) {
+
             #home,
             #about,
             #recipe {
@@ -93,6 +98,7 @@
             overflow: hidden;
             background: var(--sattori-beige, #f7f6f2);
         }
+
         .wavy-bg {
             position: absolute;
             top: 0;
@@ -103,6 +109,7 @@
             background: none;
             pointer-events: none;
         }
+
         #home .container,
         #home .text-center {
             position: relative;
@@ -118,9 +125,10 @@
 
         /* Animate card on hover */
         .recipe-card .card {
-            transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
+            transition: transform 0.25s cubic-bezier(.4, 2, .6, 1), box-shadow 0.25s;
             cursor: pointer;
         }
+
         .recipe-card .card:hover {
             transform: scale(1.04) translateY(-8px);
             box-shadow: 0 8px 32px 0 rgba(120, 190, 109, 0.18), 0 2px 8px 0 rgba(120, 190, 109, 0.10);
@@ -129,15 +137,12 @@
     </style>
 </head>
 
-<body class="poppins-regular">
+<body class="alcubierre-regular">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light poppins-semibold" id="main-navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light alcubierre-semibold" id="main-navbar">
         <div class="container">
             <!-- Mountain logo as PNG -->
             <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
-                <span style="display:inline-block; width:32px; height:32px;">
-                    <img src="mountain.png" alt="Sattori Logo" style="width:32px; height:32px; object-fit:contain;">
-                </span>
                 Sattori
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -149,16 +154,22 @@
                         <a class="nav-link" href="#home" id="nav-home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#store" id="nav-store">Store</a>
+                        <a class="nav-link" href="#product" id="nav-product">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#store" id="nav-store">Accessories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#recipe" id="nav-recipe">Recipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#whymatcha" id="nav-whymatcha">Why Matcha</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about" id="nav-about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#types" id="nav-types">Types</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#recipe" id="nav-recipe">Recipe</a>
+                        <a class="nav-link" href="#customercare" id="nav-customercare">Customer Care</a>
                     </li>
                 </ul>
             </div>
@@ -167,94 +178,277 @@
 
     <!-- Home Section -->
     <section id="home" class="spa-section" style="background: var(--sattori-beige, #f7f6f2);">
-        <!-- Wavy SVG Background -->
         <div class="wavy-bg" id="wavy-bg">
-            <svg width="100%" height="100%" viewBox="0 0 1920 400" preserveAspectRatio="none" style="display:block;">
-                <path d="M0,320 Q480,400 960,320 T1920,320 L1920,400 L0,400 Z"
-                      fill="url(#greenGradient)" opacity="0.7"/>
-                <defs>
-                    <linearGradient id="greenGradient" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stop-color="var(--sattori-light-green, #78be6d)" />
-                        <stop offset="100%" stop-color="var(--sattori-green, #4b8d47)" />
-                    </linearGradient>
-                </defs>
-            </svg>
+            <img src="dottedmountains.png" alt="dottedmountains" id="home-mountain-bg"
+                style="position:absolute; bottom: 0vh; width:100%; max-width:none; z-index:0; opacity:0.18; pointer-events:none; transition:transform 0.2s;">
         </div>
         <div class="text-center w-100">
             <div class="container" style="max-width:100vw;">
+                <img src="pictologo@300x.png" alt="Sattori Logo" style="width: 20vw; object-fit:contain;">
                 <h1 class="display-4">
                     Welcome to <span id="brand-animated" class="fw-bolder">Sattori</span>
                 </h1>
-                <p class="lead">Experience the art of matcha with Sattori - premium, authentic Japanese matcha for a mindful lifestyle.
+                <p class="lead">Experience the rich tradition and flavor of high-quality Japanese matcha.
                 </p>
-                <a href="#store" class="btn btn-success btn-lg" style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Shop Matcha</a>
+                <a href="#product" class="btn btn-success btn-lg"
+                    style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Shop
+                    Matcha</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="product" class="spa-section" style="flex-direction: column; position:relative; overflow:hidden;">
+        <!-- Parallax Matcha Bowl Background (right side) -->
+        <img src="matchabowl.png" alt="Matcha Bowl" id="product-bowl-bg"
+            style="position:absolute; right:10vw; top:10vh; max-width:15vw; z-index:0; pointer-events:none; transition:transform 0.2s;">
+        <div class="container py-5" style="position:relative; z-index:1;">
+            <h1 class="mb-4 text-center" style="color: var(--sattori-green, #4b8d47);">Products</h1>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Imperial Green Tea Powder -->
+                <div class="col">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: var(--sattori-green, #4b8d47);">Imperial Green Tea
+                                Powder</h5>
+                            <p class="card-text">
+                                Finely ground, high-quality green tea powder for a pure and authentic matcha experience.
+                                Ideal for traditional tea preparation and daily wellness.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Milk Based Matcha Drinks (Flavoured) -->
+                <div class="col">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: var(--sattori-dark-green, #357a38);">Milk Based Matcha
+                                Drinks (Flavoured)</h5>
+                            <p class="card-text">
+                                Creamy matcha beverages blended with milk and natural flavors. Perfect for those who
+                                enjoy a smooth, sweet, and refreshing twist on classic matcha.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Matcha Shots (For energy and refreshments) -->
+                <div class="col">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: var(--sattori-brown, #a68b6b);">Matcha Shots (For
+                                energy and refreshments)</h5>
+                            <p class="card-text">
+                                Quick and potent matcha shots designed for instant energy and refreshment. Great for a
+                                healthy boost on the go or as a revitalizing pick-me-up.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Store Section -->
-    <section id="store" class="spa-section" style="background: var(--sattori-accent, #e6eecf);">
-        <div class="container py-5">
-            <h1 class="mb-4 text-center" style="color: var(--sattori-green, #4b8d47);">Sattori Store</h1>
+    <section id="store" class="spa-section"
+        style="background: var(--sattori-white, #ffffff); position:relative; overflow:hidden;">
+        <!-- Parallax Whisk Background (right side) -->
+        <img src="whisk.png" alt="Matcha Whisk" id="store-whisk-bg"
+            style="position:absolute; right:10vw; top:10vh; max-width:15vw; z-index:0; pointer-events:none; transition:transform 0.2s;">
+        <div class="container py-5" style="position:relative; z-index:1;">
+            <h1 class="mb-4 text-center" style="color: var(--sattori-green, #4b8d47);">Accessories</h1>
             <div class="row row-cols-1 row-cols-md-4 g-4">
-                <!-- Matcha Jar -->
+                <!-- Wooden Cup -->
                 <div class="col">
                     <div class="card h-100 text-center">
-                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Matcha Jar" style="height:180px;object-fit:cover;">
+                        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80"
+                            class="card-img-top" alt="Wooden Cup" style="height:180px;object-fit:cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Ceremonial Matcha Jar</h5>
-                            <p class="card-text">Premium Japanese matcha in a beautiful airtight jar. 40g.</p>
-                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹899</p>
-                            <a href="#" class="btn btn-success" style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy Now</a>
+                            <h5 class="card-title">Wooden Cup</h5>
+                            <p class="card-text">Handcrafted wooden cup for a natural and warm matcha experience.</p>
+                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹499</p>
+                            <a href="#" class="btn btn-success"
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Wooden Spoons -->
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+                            class="card-img-top" alt="Wooden Spoons" style="height:180px;object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Wooden Spoons</h5>
+                            <p class="card-text">Set of 2 wooden spoons, perfect for scooping matcha or stirring drinks.
+                            </p>
+                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹199</p>
+                            <a href="#" class="btn btn-success"
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy
+                                Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Stickers (Set of 8) -->
+                <div class="col">
+                    <div class="card h-100 text-center">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                            class="card-img-top" alt="Stickers (Set of 8)" style="height:180px;object-fit:cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Stickers (Set of 8)</h5>
+                            <p class="card-text">Decorative matcha-inspired stickers for bottles, laptops, and more. Set
+                                of 8.</p>
+                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹199</p>
+                            <a href="#" class="btn btn-success"
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy
+                                Now</a>
                         </div>
                     </div>
                 </div>
                 <!-- Bamboo Whisk -->
                 <div class="col">
                     <div class="card h-100 text-center">
-                        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Bamboo Whisk" style="height:180px;object-fit:cover;">
+                        <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80"
+                            class="card-img-top" alt="Bamboo Whisk" style="height:180px;object-fit:cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Bamboo Whisk (Chasen)</h5>
-                            <p class="card-text">Handcrafted bamboo whisk for the perfect frothy matcha.</p>
-                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹499</p>
-                            <a href="#" class="btn btn-success" style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy Now</a>
+                            <h5 class="card-title">Bamboo Whisk</h5>
+                            <p class="card-text">Traditional bamboo whisk (chasen) for perfectly frothy matcha.</p>
+                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹399</p>
+                            <a href="#" class="btn btn-success"
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy
+                                Now</a>
                         </div>
                     </div>
                 </div>
-                <!-- Whisk Holder -->
+                <!-- Ceramic Whisk Holder -->
                 <div class="col">
                     <div class="card h-100 text-center">
-                        <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Whisk Holder" style="height:180px;object-fit:cover;">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
+                            class="card-img-top" alt="Ceramic Whisk Holder" style="height:180px;object-fit:cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Porcelain Whisk Holder</h5>
-                            <p class="card-text">Keep your whisk in perfect shape with this elegant holder.</p>
+                            <h5 class="card-title">Ceramic Whisk Holder</h5>
+                            <p class="card-text">Elegant ceramic holder to keep your whisk in perfect shape.</p>
                             <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹299</p>
-                            <a href="#" class="btn btn-success" style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy Now</a>
+                            <a href="#" class="btn btn-success"
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy
+                                Now</a>
                         </div>
                     </div>
                 </div>
-                <!-- Matcha Cup -->
+                <!-- Ceramic Bowl -->
                 <div class="col">
                     <div class="card h-100 text-center">
-                        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Matcha Cup" style="height:180px;object-fit:cover;">
+                        <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80"
+                            class="card-img-top" alt="Ceramic Bowl" style="height:180px;object-fit:cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Handmade Matcha Cup</h5>
-                            <p class="card-text">Artisan ceramic cup for an authentic matcha experience.</p>
+                            <h5 class="card-title">Ceramic Bowl</h5>
+                            <p class="card-text">Artisan ceramic bowl for authentic matcha preparation and serving.</p>
                             <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹599</p>
-                            <a href="#" class="btn btn-success" style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy Now</a>
+                            <a href="#" class="btn btn-success"
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy
+                                Now</a>
                         </div>
                     </div>
                 </div>
-                <!-- Branch Stickers -->
-                <div class="col">
-                    <div class="card h-100 text-center">
-                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Branch Stickers" style="height:180px;object-fit:cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Section -->
+    <section id="recipe" class="spa-section" style="position:relative; overflow:hidden;">
+        <!-- Parallax Cup Background (right side) -->
+        <img src="cup.png" alt="Matcha Cup" id="recipe-cup-bg"
+            style="position:absolute; right:10vw; top:10vh; max-width:15vw; z-index:0; pointer-events:none; transition:transform 0.2s;">
+        <div class="container py-5" style="position:relative; z-index:1;">
+            <h1 class="mb-4 text-center">Matcha Recipes</h1>
+            <!-- Filter Chips -->
+            <div class="d-flex justify-content-center mb-4 flex-wrap gap-2" id="recipe-filters">
+                <button class="btn btn-sm btn-outline-success active" data-filter="all" type="button">All</button>
+                <button class="btn btn-sm btn-outline-success" data-filter="iced" type="button">Iced</button>
+                <button class="btn btn-sm btn-outline-success" data-filter="hot" type="button">Hot</button>
+                <button class="btn btn-sm btn-outline-success" data-filter="dairy" type="button">Dairy Based</button>
+                <button class="btn btn-sm btn-outline-success" data-filter="glutenfree" type="button">Gluten
+                    Free</button>
+            </div>
+            <!-- Center the recipe grid -->
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center" id="recipe-list"
+                style="display: flex; justify-content: center;">
+                <!-- Card 1 -->
+                <div class="col recipe-card" data-tags="iced dairy">
+                    <div class="card h-100">
+                        <img src="https://cdn.loveandlemons.com/wp-content/uploads/2023/06/iced-matcha-latte-recipe-580x743.jpg"
+                            class="card-img-top object-fit-cover" alt="Matcha Latte"
+                            style="height: 250px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Branch Stickers</h5>
-                            <p class="card-text">Decorative matcha-inspired branch stickers for your bottles, laptops, and more. Set of 5.</p>
-                            <p class="fw-bold" style="color: var(--sattori-dark-green, #357a38);">₹149</p>
-                            <a href="#" class="btn btn-success" style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">Buy Now</a>
+                            <h5 class="card-title">Matcha Latte</h5>
+                            <p class="card-text">Creamy and smooth matcha latte made with milk and ceremonial grade
+                                matcha.</p>
                         </div>
+                        <div class="card-footer">
+                            <small class="text-muted">5 min | Easy</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col recipe-card" data-tags="iced glutenfree">
+                    <div class="card h-100">
+                        <img src="https://www.justonecookbook.com/wp-content/uploads/2023/07/Iced-Matcha-Latte-0331-V.jpg"
+                            class="card-img-top" alt="Iced Matcha" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Iced Matcha</h5>
+                            <p class="card-text">Refreshing iced matcha drink, perfect for hot days. Just add ice and
+                                enjoy!</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">3 min | Easy</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col recipe-card" data-tags="hot glutenfree">
+                    <div class="card h-100">
+                        <img src="https://thechestnutbakery.com/wp-content/uploads/2022/04/easy-vegan-matcha-cookies-1024x1536.jpg.webp"
+                            class="card-img-top" alt="Matcha Cookies" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Matcha Cookies</h5>
+                            <p class="card-text">Delicious matcha-infused cookies with a subtle earthy flavor and a
+                                sweet finish.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">30 min | Medium</small>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more cards as needed, with appropriate data-tags -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Matcha Section -->
+    <section id="whymatcha" class="spa-section" style="flex-direction: column; position:relative; overflow:hidden;">
+        <!-- Parallax Leaves Background (right side) -->
+        <img src="leaves.png" alt="Matcha Leaves" id="whymatcha-leaves-bg"
+            style="position:absolute; right:10vw; top:10vh; max-width:15vw; z-index:0; pointer-events:none; transition:transform 0.2s;">
+        <div class="container py-5" style="position:relative; z-index:1;">
+            <h1 class="mb-4 text-center" style="color: var(--sattori-green, #4b8d47);">Why Matcha?</h1>
+            <div>
+                <div class="row align-items-center">
+                    <div class="col-md-3 mb-4 mb-md-0 text-center">
+                        <img src="pexels-ivan-samkov-8951882.jpg" alt="Matcha Preparation" class="img-fluid rounded shadow" style="object-fit:cover;">
+                    </div>
+                    <div class="col-md-9">
+                        <p class="lead">
+                            Matcha is more than just finely ground green tea—it's a centuries-old tradition celebrated for its vibrant flavor, health benefits, and mindful preparation. Unlike regular green tea, matcha is made from shade-grown leaves that are stone-ground into a fine powder, allowing you to consume the entire leaf and all its nutrients.
+                        </p>
+                        <ul>
+                            <li><strong>Rich in Antioxidants:</strong> Matcha is packed with catechins, especially EGCG, which help fight free radicals and support overall wellness.</li>
+                            <li><strong>Calm, Focused Energy:</strong> The unique combination of caffeine and L-theanine in matcha provides a gentle, sustained boost—promoting alertness without jitters or crashes.</li>
+                            <li><strong>Supports Metabolism:</strong> Studies suggest matcha can help enhance metabolism and support healthy weight management.</li>
+                            <li><strong>Mindful Ritual:</strong> Preparing matcha is a meditative process that encourages you to slow down and savor the moment.</li>
+                            <li><strong>Versatile & Delicious:</strong> Enjoy matcha hot or iced, in lattes, smoothies, or even baked goods—its earthy, umami-rich flavor pairs beautifully with many recipes.</li>
+                        </ul>
+                        <p>
+                            Whether you're seeking a healthier alternative to coffee, a daily wellness ritual, or simply a delicious drink, matcha offers a unique blend of tradition, taste, and nourishment.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -263,13 +457,13 @@
 
     <!-- About Section -->
     <section id="about" class="spa-section" style="position:relative; overflow:hidden;">
-        <!-- Parallax mountain background -->
-        <img src="mountain.png" alt="Mountains" id="about-mountain-bg"
-             style="position:absolute; left:50vh; bottom: -60vh; width:100%; max-width:none; z-index:0; opacity:0.18; pointer-events:none; transition:transform 0.2s;">
+        <!-- Parallax Mountains Background (bottom) -->
+        <img src="highcontrastmountains.png" alt="Mountains" id="about-mountains-bg"
+            style="position:absolute; left:0; bottom:0; width:100vw; max-width:none; z-index:0; pointer-events:none; transition:transform 0.2s;">
         <div class="container py-5" style="position:relative; z-index:1;">
             <div class="row align-items-center">
                 <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                    <img src="pexels-elliot-fais-471883-20106383.jpg"
                         class="rounded-circle img-fluid" alt="Sattori Matcha">
                 </div>
                 <div class="col-md-8">
@@ -277,14 +471,18 @@
                     <p class="lead mb-2">
                         I didn't discover matcha in some faraway Japanese temple—it happened in Pune.<br>
                         A small café, a quiet moment, and a cup of something bright green that tasted… different.
-                        Smooth, earthy, calming. I didn't know then that it would become such a grounding force in my life.
+                        Smooth, earthy, calming. I didn't know then that it would become such a grounding force in my
+                        life.
                     </p>
                     <p class="lead mb-2">
-                        Matcha felt like more than a drink. It was a ritual—something that helped me slow down, find focus, and feel clear without the chaos that coffee left behind.
+                        Matcha felt like more than a drink. It was a ritual—something that helped me slow down, find
+                        focus, and feel clear without the chaos that coffee left behind.
                     </p>
                     <p class="lead mb-2">
-                        But I struggled to find that same experience again. Most matcha brands felt too bitter, too clinical, or just didn't carry the soul of what I'd tasted. That's when the idea sparked:<br>
-                        What if I created a matcha brand that was rooted in mindfulness, but fit our fast-paced lives?<br>
+                        But I struggled to find that same experience again. Most matcha brands felt too bitter, too
+                        clinical, or just didn't carry the soul of what I'd tasted. That's when the idea sparked:<br>
+                        What if I created a matcha brand that was rooted in mindfulness, but fit our fast-paced
+                        lives?<br>
                         That honored tradition, but made space for flavor, creativity, and play.
                     </p>
                     <p class="lead mb-4">
@@ -302,129 +500,32 @@
         </div>
     </section>
 
-    <!-- Types of Matcha Section -->
-    <section id="types" class="spa-section" style="background: var(--sattori-beige, #f7f6f2); flex-direction: column;">
-        <div class="container py-5">
-            <h1 class="mb-4 text-center" style="color: var(--sattori-green, #4b8d47);">Types of Matcha</h1>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- Ceremonial Grade -->
-                <div class="col">
-                    <div class="card h-100 text-center border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: var(--sattori-green, #4b8d47);">Ceremonial Grade</h5>
-                            <p class="card-text">
-                                The highest quality matcha, made from the youngest tea leaves. Vibrant green, naturally sweet, and ideal for traditional tea ceremonies or drinking straight.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Premium Grade -->
-                <div class="col">
-                    <div class="card h-100 text-center border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: var(--sattori-dark-green, #357a38);">Premium Grade</h5>
-                            <p class="card-text">
-                                Excellent for daily drinking and lattes. Balanced flavor, smooth texture, and a bright green color. Great for both sipping and mixing.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Culinary Grade -->
-                <div class="col">
-                    <div class="card h-100 text-center border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title" style="color: var(--sattori-brown, #a68b6b);">Culinary Grade</h5>
-                            <p class="card-text">
-                                Perfect for cooking and baking. Slightly more robust and earthy, it adds vibrant color and flavor to smoothies, desserts, and recipes.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Recipe Section -->
-    <section id="recipe" class="spa-section">
-        <div class="container py-5">
-            <h1 class="mb-4 text-center">Matcha Recipes</h1>
-            <!-- Filter Chips -->
-            <div class="d-flex justify-content-center mb-4 flex-wrap gap-2" id="recipe-filters">
-                <button class="btn btn-sm btn-outline-success active" data-filter="all" type="button">All</button>
-                <button class="btn btn-sm btn-outline-success" data-filter="iced" type="button">Iced</button>
-                <button class="btn btn-sm btn-outline-success" data-filter="hot" type="button">Hot</button>
-                <button class="btn btn-sm btn-outline-success" data-filter="dairy" type="button">Dairy Based</button>
-                <button class="btn btn-sm btn-outline-success" data-filter="glutenfree" type="button">Gluten Free</button>
-            </div>
-            <!-- Center the recipe grid -->
-            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center" id="recipe-list" style="display: flex; justify-content: center;">
-                <!-- Card 1 -->
-                <div class="col recipe-card" data-tags="iced dairy">
-                    <div class="card h-100">
-                        <img src="https://cdn.loveandlemons.com/wp-content/uploads/2023/06/iced-matcha-latte-recipe-580x743.jpg"
-                            class="card-img-top object-fit-cover" alt="Matcha Latte"
-                            style="height: 250px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Matcha Latte</h5>
-                            <p class="card-text">Creamy and smooth matcha latte made with milk and ceremonial grade matcha.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">5 min | Easy</small>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="col recipe-card" data-tags="iced glutenfree">
-                    <div class="card h-100">
-                        <img src="https://www.justonecookbook.com/wp-content/uploads/2023/07/Iced-Matcha-Latte-0331-V.jpg"
-                            class="card-img-top" alt="Iced Matcha" style="height: 250px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Iced Matcha</h5>
-                            <p class="card-text">Refreshing iced matcha drink, perfect for hot days. Just add ice and enjoy!</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">3 min | Easy</small>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col recipe-card" data-tags="hot glutenfree">
-                    <div class="card h-100">
-                        <img src="https://thechestnutbakery.com/wp-content/uploads/2022/04/easy-vegan-matcha-cookies-1024x1536.jpg.webp"
-                            class="card-img-top" alt="Matcha Cookies" style="height: 250px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title">Matcha Cookies</h5>
-                            <p class="card-text">Delicious matcha-infused cookies with a subtle earthy flavor and a sweet finish.</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">30 min | Medium</small>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more cards as needed, with appropriate data-tags -->
-            </div>
-        </div>
-    </section>
-
     <!-- Recipe Detail Modal -->
     <div class="modal fade" id="recipeModal" tabindex="-1" aria-labelledby="recipeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content" style="border-radius: 1.5rem;">
-          <div class="modal-header border-0">
-            <h5 class="modal-title" id="recipeModalLabel"></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" id="recipeModalBody">
-            <!-- Recipe details will be injected here -->
-          </div>
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content" style="border-radius: 1.5rem;">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="recipeModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="recipeModalBody">
+                    <!-- Recipe details will be injected here -->
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- Footer -->
     <footer class="text-white text-center py-3 mt-auto" style="background: var(--sattori-green, #4b8d47);">
         <div class="container">
-            &copy; 2024 Sattori. All rights reserved.
+            &copy; 2024 Sattori. All rights reserved.<br>
+            <span>
+                <strong>Email:</strong> <a href="mailto:support@sattorimatcha.com"
+                    class="text-white text-decoration-underline">support@sattorimatcha.com</a> &nbsp;|&nbsp;
+                <strong>Phone:</strong> <a href="tel:+919137895434" class="text-white text-decoration-underline">+91
+                    91378 95434</a> &nbsp;|&nbsp;
+                <strong>Location:</strong> Nagpur, India
+            </span>
         </div>
     </footer>
 
@@ -438,7 +539,7 @@
             });
 
             function onScroll() {
-                const sections = ['home', 'store', 'about', 'types', 'recipe'];
+                const sections = ['home', 'product', 'store', 'recipe', 'whymatcha', 'about', 'customercare'];
                 let current = sections[0];
                 const scrollPos = window.scrollY + 80; // Offset for navbar
 
@@ -506,22 +607,93 @@
             }
         });
 
-        // Parallax effect for about section mountain background
+        // Parallax effect for product section matcha bowl background
+        window.addEventListener('scroll', function () {
+            const product = document.getElementById('product');
+            const bowl = document.getElementById('product-bowl-bg');
+            if (product && bowl) {
+                const rect = product.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    // Parallax: move slower than scroll
+                    const scrolled = Math.max(0, window.innerHeight + rect.top);
+                    // Subtle up/down movement and slight scale
+                    const sectionHeight = rect.height || product.offsetHeight;
+                    const visible = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + sectionHeight)));
+                    const scale = 1 + visible * 0.08;
+                    bowl.style.transform = `translateY(${scrolled * 0.12}px) scale(${scale})`;
+                }
+            }
+        });
+
+        // Parallax effect for store section whisk background
+        window.addEventListener('scroll', function () {
+            const store = document.getElementById('store');
+            const whisk = document.getElementById('store-whisk-bg');
+            if (store && whisk) {
+                const rect = store.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    // Parallax: move slower than scroll
+                    const scrolled = Math.max(0, window.innerHeight + rect.top);
+                    // Subtle up/down movement and slight scale
+                    const sectionHeight = rect.height || store.offsetHeight;
+                    const visible = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + sectionHeight)));
+                    const scale = 1 + visible * 0.08;
+                    whisk.style.transform = `translateY(${scrolled * 0.10}px) scale(${scale})`;
+                }
+            }
+        });
+
+        // Parallax effect for recipe section cup background
+        window.addEventListener('scroll', function () {
+            const recipe = document.getElementById('recipe');
+            const cup = document.getElementById('recipe-cup-bg');
+            if (recipe && cup) {
+                const rect = recipe.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    // Parallax: move slower than scroll
+                    const scrolled = Math.max(0, window.innerHeight + rect.top);
+                    // Subtle up/down movement and slight scale
+                    const sectionHeight = rect.height || recipe.offsetHeight;
+                    const visible = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + sectionHeight)));
+                    const scale = 1 + visible * 0.08;
+                    cup.style.transform = `translateY(${scrolled * 0.10}px) scale(${scale})`;
+                }
+            }
+        });
+
+        // Parallax effect for whymatcha section leaves background
+        window.addEventListener('scroll', function () {
+            const whymatcha = document.getElementById('whymatcha');
+            const leaves = document.getElementById('whymatcha-leaves-bg');
+            if (whymatcha && leaves) {
+                const rect = whymatcha.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    // Parallax: move slower than scroll
+                    const scrolled = Math.max(0, window.innerHeight + rect.top);
+                    // Subtle up/down movement and slight scale
+                    const sectionHeight = rect.height || whymatcha.offsetHeight;
+                    const visible = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + sectionHeight)));
+                    const scale = 1 + visible * 0.08;
+                    leaves.style.transform = `translateY(${scrolled * 0.10}px) scale(${scale})`;
+                }
+            }
+        });
+
+        // Parallax effect for about section mountains background
         window.addEventListener('scroll', function () {
             const about = document.getElementById('about');
-            const mountain = document.getElementById('about-mountain-bg');
-            if (about && mountain) {
-            const rect = about.getBoundingClientRect();
-            // Only apply if section is in viewport
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                // Parallax: move slower than scroll
-                const scrolled = Math.max(0, window.innerHeight + rect.top);
-                // Zoom in effect: scale from 1 to 1.15 as you scroll through the section
-                const sectionHeight = rect.height || about.offsetHeight;
-                const visible = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + sectionHeight)));
-                const scale = 1 + visible * 0.15;
-                mountain.style.transform = `translateY(${scrolled * 0.1}px) scale(${scale})`;
-            }
+            const mountains = document.getElementById('about-mountains-bg');
+            if (about && mountains) {
+                const rect = about.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    // Parallax: move slower than scroll
+                    const scrolled = Math.max(0, window.innerHeight + rect.top);
+                    // Subtle up/down movement and slight scale
+                    const sectionHeight = rect.height || about.offsetHeight;
+                    const visible = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + sectionHeight)));
+                    const scale = 1 + visible * 0.08;
+                    mountains.style.transform = `translateY(${scrolled * 0.10}px) scale(${scale})`;
+                }
             }
         });
 
@@ -546,80 +718,14 @@
             });
         });
 
-        document.addEventListener('DOMContentLoaded', function () {
-    // Recipe details data (add more as needed)
-    const recipeDetails = {
-        "Matcha Latte": {
-            img: "https://cdn.loveandlemons.com/wp-content/uploads/2023/06/iced-matcha-latte-recipe-580x743.jpg",
-            title: "Matcha Latte",
-            time: "5 min | Easy",
-            description: "Creamy and smooth matcha latte made with milk and ceremonial grade matcha.",
-            ingredients: [
-                "1 tsp ceremonial grade matcha",
-                "60ml hot water (not boiling)",
-                "200ml milk (dairy or plant-based)",
-                "1-2 tsp sweetener (optional)"
-            ],
-            steps: [
-                "Sift matcha into a bowl.",
-                "Add hot water and whisk until frothy.",
-                "Heat and froth milk, then pour over matcha.",
-                "Sweeten to taste and enjoy."
-            ]
-        },
-        "Iced Matcha": {
-            img: "https://www.justonecookbook.com/wp-content/uploads/2023/07/Iced-Matcha-Latte-0331-V.jpg",
-            title: "Iced Matcha",
-            time: "3 min | Easy",
-            description: "Refreshing iced matcha drink, perfect for hot days. Just add ice and enjoy!",
-            ingredients: [
-                "1 tsp matcha powder",
-                "60ml hot water",
-                "Ice cubes",
-                "150ml cold water or milk",
-                "Sweetener (optional)"
-            ],
-            steps: [
-                "Sift matcha into a cup.",
-                "Add hot water and whisk until smooth.",
-                "Fill glass with ice, pour matcha over.",
-                "Add cold water or milk, stir and enjoy."
-            ]
-        },
-        "Matcha Cookies": {
-            img: "https://thechestnutbakery.com/wp-content/uploads/2022/04/easy-vegan-matcha-cookies-1024x1536.jpg.webp",
-            title: "Matcha Cookies",
-            time: "30 min | Medium",
-            description: "Delicious matcha-infused cookies with a subtle earthy flavor and a sweet finish.",
-            ingredients: [
-                "1 cup flour",
-                "1 tbsp matcha powder",
-                "1/2 cup sugar",
-                "1/2 cup butter (softened)",
-                "1 egg",
-                "1/2 tsp baking powder",
-                "Pinch of salt"
-            ],
-            steps: [
-                "Preheat oven to 170°C (340°F).",
-                "Cream butter and sugar, add egg.",
-                "Mix in flour, matcha, baking powder, salt.",
-                "Shape dough, place on tray.",
-                "Bake 12-15 min until edges are golden."
-            ]
-        }
-    };
-
-    // Card hover: show pointer and scale (handled by CSS above)
-
-    // Card click: show modal with details
-    document.querySelectorAll('.recipe-card .card').forEach(card => {
-        card.addEventListener('click', function () {
-            const title = this.querySelector('.card-title').textContent.trim();
-            const data = recipeDetails[title];
-            if (data) {
-                document.getElementById('recipeModalLabel').textContent = data.title;
-                document.getElementById('recipeModalBody').innerHTML = `
+        // Card click: show modal with details
+        document.querySelectorAll('.recipe-card .card').forEach(card => {
+            card.addEventListener('click', function () {
+                const title = this.querySelector('.card-title').textContent.trim();
+                const data = recipeDetails[title];
+                if (data) {
+                    document.getElementById('recipeModalLabel').textContent = data.title;
+                    document.getElementById('recipeModalBody').innerHTML = `
                     <div class="row">
                         <div class="col-md-5 mb-3 mb-md-0">
                             <img src="${data.img}" alt="${data.title}" class="img-fluid rounded shadow-sm" style="width:100%;">
@@ -634,12 +740,75 @@
                         </div>
                     </div>
                 `;
-                const modal = new bootstrap.Modal(document.getElementById('recipeModal'));
-                modal.show();
-            }
+                    const modal = new bootstrap.Modal(document.getElementById('recipeModal'));
+                    modal.show();
+                }
+            });
         });
-    });
-});
+
+        // Recipe details data (add more as needed)
+        const recipeDetails = {
+            "Matcha Latte": {
+                img: "https://cdn.loveandlemons.com/wp-content/uploads/2023/06/iced-matcha-latte-recipe-580x743.jpg",
+                title: "Matcha Latte",
+                time: "5 min | Easy",
+                description: "Creamy and smooth matcha latte made with milk and ceremonial grade matcha.",
+                ingredients: [
+                    "1 tsp ceremonial grade matcha",
+                    "60ml hot water (not boiling)",
+                    "200ml milk (dairy or plant-based)",
+                    "1-2 tsp sweetener (optional)"
+                ],
+                steps: [
+                    "Sift matcha into a bowl.",
+                    "Add hot water and whisk until frothy.",
+                    "Heat and froth milk, then pour over matcha.",
+                    "Sweeten to taste and enjoy."
+                ]
+            },
+            "Iced Matcha": {
+                img: "https://www.justonecookbook.com/wp-content/uploads/2023/07/Iced-Matcha-Latte-0331-V.jpg",
+                title: "Iced Matcha",
+                time: "3 min | Easy",
+                description: "Refreshing iced matcha drink, perfect for hot days. Just add ice and enjoy!",
+                ingredients: [
+                    "1 tsp matcha powder",
+                    "60ml hot water",
+                    "Ice cubes",
+                    "150ml cold water or milk",
+                    "Sweetener (optional)"
+                ],
+                steps: [
+                    "Sift matcha into a cup.",
+                    "Add hot water and whisk until smooth.",
+                    "Fill glass with ice, pour matcha over.",
+                    "Add cold water or milk, stir and enjoy."
+                ]
+            },
+            "Matcha Cookies": {
+                img: "https://thechestnutbakery.com/wp-content/uploads/2022/04/easy-vegan-matcha-cookies-1024x1536.jpg.webp",
+                title: "Matcha Cookies",
+                time: "30 min | Medium",
+                description: "Delicious matcha-infused cookies with a subtle earthy flavor and a sweet finish.",
+                ingredients: [
+                    "1 cup flour",
+                    "1 tbsp matcha powder",
+                    "1/2 cup sugar",
+                    "1/2 cup butter (softened)",
+                    "1 egg",
+                    "1/2 tsp baking powder",
+                    "Pinch of salt"
+                ],
+                steps: [
+                    "Preheat oven to 170°C (340°F).",
+                    "Cream butter and sugar, add egg.",
+                    "Mix in flour, matcha, baking powder, salt.",
+                    "Shape dough, place on tray.",
+                    "Bake 12-15 min until edges are golden."
+                ]
+            }
+        };
+
     </script>
 </body>
 

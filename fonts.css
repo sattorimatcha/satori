@@ -1,109 +1,114 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face {
+  font-family: "Alcubierre";
+  src: url("Alcubierre.otf") format("opentype");
+}
 
-.poppins-thin {
-  font-family: "Poppins", sans-serif;
+.alcubierre-thin {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 100;
   font-style: normal;
 }
 
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
+.alcubierre-extralight {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 200;
   font-style: normal;
 }
 
-.poppins-light {
-  font-family: "Poppins", sans-serif;
+.alcubierre-light {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
+.alcubierre-regular {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 400;
   font-style: normal;
+  letter-spacing: 1px;
 }
 
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
+.alcubierre-medium {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
+.alcubierre-semibold {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 600;
   font-style: normal;
+  letter-spacing: 2px;
 }
 
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
+.alcubierre-bold {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
 
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
+.alcubierre-extrabold {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 800;
   font-style: normal;
 }
 
-.poppins-black {
-  font-family: "Poppins", sans-serif;
+.alcubierre-black {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 900;
   font-style: normal;
 }
 
-.poppins-thin-italic {
-  font-family: "Poppins", sans-serif;
+.alcubierre-thin-italic {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 100;
   font-style: italic;
 }
 
-.poppins-extralight-italic {
-  font-family: "Poppins", sans-serif;
+.alcubierre-extralight-italic {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 200;
   font-style: italic;
 }
 
-.poppins-light-italic {
-  font-family: "Poppins", sans-serif;
+.alcubierre-light-italic {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 300;
   font-style: italic;
 }
 
-.poppins-regular-italic {
-  font-family: "Poppins", sans-serif;
+.alcubierre-regular-italic {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 400;
   font-style: italic;
 }
 
-.poppins-medium-italic {
-  font-family: "Poppins", sans-serif;
+.alcubierre-medium-italic {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 500;
   font-style: italic;
 }
 
-.poppins-semibold-italic {
-  font-family: "Poppins", sans-serif;
+.alcubierre-semibold-italic {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 600;
   font-style: italic;
 }
 
-.poppins-bold-italic {
-  font-family: "Poppins", sans-serif;
+.alcubierre-bold-italic {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 700;
   font-style: italic;
 }
 
-.poppins-extrabold-italic {
-  font-family: "Poppins", sans-serif;
+.alcubierre-extrabold-italic {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 800;
   font-style: italic;
 }
 
-.poppins-black-italic {
-  font-family: "Poppins", sans-serif;
+.alcubierre-black-italic {
+  font-family: "Alcubierre", sans-serif;
   font-weight: 900;
   font-style: italic;
 }
