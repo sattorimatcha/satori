@@ -156,11 +156,11 @@
         }
 
         /* Product card image hover effect */
-        .product-card {
+        .product-card .card {
             transition: transform 0.25s cubic-bezier(.4, 2, .6, 1), box-shadow 0.25s;
         }
 
-        .product-card:hover {
+        .product-card .card:hover {
             box-shadow: 0 4px 8px 0 var(--sattori-dark-green, 0.01), 0 6px 20px 0 var(--sattori-dark-green, 0.01);
             z-index: 2;
         }
@@ -260,7 +260,29 @@
             <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center" id="product-list">
                 <!-- Milk Based Matcha Drinks (Flavoured) -->
                 <div class="col product-card" data-tags="matcha all">
-                    <div class="card h-100 text-center border-0 shadow-sm">
+                    <div class="card h-100 text-center">
+                        <div class="d-flex justify-content-center align-items-center" style="gap:0.5rem;">
+                            <img src="classic matcha latte front.png" alt="Classic Matcha Latte Front"
+                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
+                            <img src="classic matcha latte back.png" alt="Classic Matcha Latte Back"
+                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title alcubierre-bold">Classic Matcha Latte</h5>
+                            <p class="mb-1"><strong>Quantity:</strong> 400ml</p>
+                            <p class="mb-1"><strong>Ingredients:</strong> Ceremonial grade matcha, oat milk, Monk fruit</p>
+                            <p class="mb-1"><strong>Price:</strong> ₹380</p>
+                            <p class="mb-1"><strong>Storage:</strong> Keep refrigerated</p>
+                            <p class="mb-1"><strong>Best served chilled</strong></p>
+                            <a href="#" class="btn btn-success mt-2"
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">
+                                ₹380
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col product-card" data-tags="matcha all">
+                    <div class="card h-100 text-center">
                         <div class="d-flex justify-content-center align-items-center" style="gap:0.5rem;">
                             <img src="blueberry bottle front.png" alt="Blueberry Bottle Front"
                                 style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
@@ -283,7 +305,7 @@
                     </div>
                 </div>
                 <div class="col product-card" data-tags="matcha all">
-                    <div class="card h-100 text-center border-0 shadow-sm">
+                    <div class="card h-100 text-center">
                         <div class="d-flex justify-content-center align-items-center" style="gap:0.5rem;">
                             <img src="mango bottle front.png" alt="Mango Bottle Front"
                                 style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
@@ -305,10 +327,32 @@
                         </div>
                     </div>
                 </div>
+                <div class="col product-card" data-tags="matcha all">
+                    <div class="card h-100 text-center">
+                        <div class="d-flex justify-content-center align-items-center" style="gap:0.5rem;">
+                            <img src="strawberry matcha latte front.png" alt="Strawberry Matcha Latte Front"
+                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
+                            <img src="strawberry matcha latte back.png" alt="Strawberry Matcha Latte Back"
+                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title alcubierre-bold">Strawberry Matcha Latte</h5>
+                            <p class="mb-1"><strong>Quantity:</strong> 400ml</p>
+                            <p class="mb-1"><strong>Ingredients:</strong> Ceremonial grade matcha, Strawberry purée, dairy milk, Monk fruit</p>
+                            <p class="mb-1"><strong>Price:</strong> ₹395</p>
+                            <p class="mb-1"><strong>Storage:</strong> Keep refrigerated</p>
+                            <p class="mb-1"><strong>Best served chilled</strong></p>
+                            <a href="#" class="btn btn-success mt-2"
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">
+                                ₹395
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Imperial Green Tea Powder -->
                 <div class="col product-card" style="display: none;" data-tags="powder all">
-                    <div class="card h-100 text-center border-0 shadow-sm">
+                    <div class="card h-100 text-center">
                         <div class="d-flex justify-content-center align-items-center" style="gap:0.5rem;">
                             <img src="blueberry bottle front.png" alt="Imperial Green Tea Powder Front"
                                 style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
@@ -329,20 +373,53 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- Matcha Shots (For energy and refreshments) -->
                 <div class="col product-card" style="display: none;" data-tags="shots all">
-                    <div class="card h-100 text-center border-0 shadow-sm">
+                    <div class="card h-100 text-center">
                         <div class="d-flex justify-content-center align-items-center" style="gap:0.5rem;">
-                            <img src="mango bottle front.png" alt="Matcha Shot Front"
-                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
-                            <img src="mango bottle back.png" alt="Matcha Shot Back"
+                            <img src="coconut cloud matcha shot.png" alt="Matcha Shot Front"
                                 style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
                         </div>
                         <div class="card-body">
-                            <h5 class="card-title alcubierre-bold">Matcha Energy Shot</h5>
-                            <p class="mb-1"><strong>Quantity:</strong> 60ml</p>
-                            <p class="mb-1"><strong>Ingredients:</strong> Ceremonial grade matcha, lemon juice, honey, water</p>
-                            <p class="mb-1"><strong>Price:</strong> ₹410</p>
+                            <h5 class="card-title alcubierre-bold">Coconut Cloud Matcha Shot</h5>
+                            <p class="mb-1"><strong>Quantity:</strong> 80ml</p>
+                            <p class="mb-1"><strong>Storage:</strong> Keep refrigerated</p>
+                            <p class="mb-1"><strong>Best served chilled</strong></p>
+                            <a href="#" class="btn btn-success mt-2 mb-1"
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">
+                                ₹410
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col product-card" style="display: none;" data-tags="shots all">
+                    <div class="card h-100 text-center">
+                        <div class="d-flex justify-content-center align-items-center" style="gap:0.5rem;">
+                            <img src="matcha lemon shot.png" alt="Matcha Shot Front"
+                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title alcubierre-bold">Matcha Lemon Shot</h5>
+                            <p class="mb-1"><strong>Quantity:</strong> 80ml</p>
+                            <p class="mb-1"><strong>Storage:</strong> Keep refrigerated</p>
+                            <p class="mb-1"><strong>Best served chilled</strong></p>
+                            <a href="#" class="btn btn-success mt-2 mb-1"
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">
+                                ₹410
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col product-card" style="display: none;" data-tags="shots all">
+                    <div class="card h-100 text-center">
+                        <div class="d-flex justify-content-center align-items-center" style="gap:0.5rem;">
+                            <img src="peach lemon matcha shot.png" alt="Matcha Shot Front"
+                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title alcubierre-bold">Peach Lemon Matcha Shot</h5>
+                            <p class="mb-1"><strong>Quantity:</strong> 80ml</p>
                             <p class="mb-1"><strong>Storage:</strong> Keep refrigerated</p>
                             <p class="mb-1"><strong>Best served chilled</strong></p>
                             <a href="#" class="btn btn-success mt-2 mb-1"
