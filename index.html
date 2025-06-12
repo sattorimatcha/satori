@@ -134,6 +134,38 @@
             box-shadow: 0 8px 32px 0 rgba(120, 190, 109, 0.18), 0 2px 8px 0 rgba(120, 190, 109, 0.10);
             z-index: 2;
         }
+
+        .recipe-card .card img {
+            transition: transform 0.2s;
+            height: 250px;
+            object-fit: contain;
+        }
+
+        .recipe-card .card:hover img {
+            transform: scale(1.15);
+        }
+
+        /* Product card image hover effect */
+        .product-card {
+            transition: transform 0.25s cubic-bezier(.4, 2, .6, 1), box-shadow 0.25s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 4px 8px 0 var(--sattori-dark-green, 0.01), 0 6px 20px 0 var(--sattori-dark-green, 0.01);
+            z-index: 2;
+        }
+
+        .product-card .card img {
+            transition: transform 0.2s;
+        }
+
+        .product-card .card:hover img {
+            transform: scale(1.5);
+        }
+
+        button {
+            letter-spacing: 1px;
+        }
     </style>
 </head>
 
@@ -154,13 +186,13 @@
                         <a class="nav-link" href="#home" id="nav-home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#product" id="nav-product">Product</a>
+                        <a class="nav-link" href="#product" id="nav-product">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#store" id="nav-store">Accessories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#recipe" id="nav-recipe">Recipe</a>
+                        <a class="nav-link" href="#recipe" id="nav-recipe">Recipes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#whymatcha" id="nav-whymatcha">Why Matcha</a>
@@ -204,48 +236,114 @@
             style="position:absolute; right:10vw; top:10vh; max-width:15vw; z-index:0; pointer-events:none; transition:transform 0.2s;">
         <div class="container py-5" style="position:relative; z-index:1;">
             <h1 class="mb-4 text-center alcubierre-black" style="color: var(--sattori-black, #050708);">Products</h1>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <!-- Imperial Green Tea Powder -->
-                <div class="col">
+            <!-- Filter Chips -->
+            <div class="d-flex justify-content-center mb-4 flex-wrap gap-2" id="product-filters">
+                <!-- <button class="btn btn-sm btn-outline-success active" data-filter="all" type="button">All</button> -->
+                <button class="btn btn-sm btn-outline-success active" data-filter="matcha" type="button">Milk Based Matcha
+                    Drinks (Flavoured)</button>
+                <button class="btn btn-sm btn-outline-success" data-filter="powder" type="button">Imperial Green Tea
+                    Powder</button>
+                <button class="btn btn-sm btn-outline-success" data-filter="shots" type="button">Matcha Shots (For
+                    energy and refreshments)</button>
+            </div>
+            <!-- Product Grid -->
+            <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center" id="product-list">
+                <!-- Milk Based Matcha Drinks (Flavoured) -->
+                <div class="col product-card" data-tags="matcha all">
                     <div class="card h-100 text-center border-0 shadow-sm">
+                        <div class="d-flex justify-content-center align-items-center" style="gap:0.5rem;">
+                            <img src="blueberry bottle front.png" alt="Blueberry Bottle Front"
+                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
+                            <img src="blueberry bottle back.png" alt="Blueberry Bottle Back"
+                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title" style="color: var(--sattori-green, #4b8d47);">Imperial Green Tea
-                                Powder</h5>
-                            <p class="card-text">
-                                Finely ground, high-quality green tea powder for a pure and authentic matcha experience.
-                                Ideal for traditional tea preparation and daily wellness.
-                            </p>
+                            <h5 class="card-title" style="color: var(--sattori-green, #4b8d47);">Blueberry Matcha
+                                Latte</h5>
+                            <p class="mb-1"><strong>Quantity:</strong> 450ml</p>
+                            <p class="mb-1"><strong>Ingredients:</strong> Ceremonial grade matcha, Blueberry purée, dairy milk, Monk fruit</p>
+                            <p class="mb-1"><strong>Price:</strong> ₹410</p>
+                            <p class="mb-1"><strong>Storage:</strong> Keep refrigerated</p>
+                            <p class="mb-1"><strong>Best served chilled</strong></p>
+                            <a href="#" class="btn btn-success mt-2 mb-1"
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">
+                                ₹410
+                            </a>
                         </div>
                     </div>
                 </div>
-                <!-- Milk Based Matcha Drinks (Flavoured) -->
-                <div class="col">
+                <div class="col product-card" data-tags="matcha all">
                     <div class="card h-100 text-center border-0 shadow-sm">
+                        <div class="d-flex justify-content-center align-items-center" style="gap:0.5rem;">
+                            <img src="mango bottle front.png" alt="Mango Bottle Front"
+                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
+                            <img src="mango bottle back.png" alt="Mango Bottle Back"
+                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title" style="color: var(--sattori-dark-green, #357a38);">Milk Based Matcha
-                                Drinks (Flavoured)</h5>
-                            <p class="card-text">
-                                Creamy matcha beverages blended with milk and natural flavors. Perfect for those who
-                                enjoy a smooth, sweet, and refreshing twist on classic matcha.
-                            </p>
+                            <h5 class="card-title" style="color: var(--sattori-dark-green, #357a38);">Mango Matcha
+                                Latte</h5>
+                            <p class="mb-1"><strong>Quantity:</strong> 400ml</p>
+                            <p class="mb-1"><strong>Ingredients:</strong> Ceremonial grade matcha, Ripe mango purée, oat milk, Monk fruit</p>
+                            <p class="mb-1"><strong>Price:</strong> ₹395</p>
+                            <p class="mb-1"><strong>Storage:</strong> Keep refrigerated</p>
+                            <p class="mb-1"><strong>Best served chilled</strong></p>
+                            <a href="#" class="btn btn-success mt-2"
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">
+                                ₹395
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Imperial Green Tea Powder -->
+                <div class="col product-card" style="display: none;" data-tags="powder all">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <div class="d-flex justify-content-center align-items-center" style="gap:0.5rem;">
+                            <img src="blueberry bottle front.png" alt="Imperial Green Tea Powder Front"
+                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
+                            <img src="blueberry bottle back.png" alt="Imperial Green Tea Powder Back"
+                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: var(--sattori-green, #4b8d47);">Imperial Green Tea Powder</h5>
+                            <p class="mb-1"><strong>Quantity:</strong> 50g</p>
+                            <p class="mb-1"><strong>Ingredients:</strong> 100% ceremonial grade matcha powder</p>
+                            <p class="mb-1"><strong>Price:</strong> ₹410</p>
+                            <p class="mb-1"><strong>Storage:</strong> Keep in a cool, dry place</p>
+                            <p class="mb-1"><strong>Best for lattes, baking, and smoothies</strong></p>
+                            <a href="#" class="btn btn-success mt-2 mb-1"
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">
+                                ₹410
+                            </a>
                         </div>
                     </div>
                 </div>
                 <!-- Matcha Shots (For energy and refreshments) -->
-                <div class="col">
+                <div class="col product-card" style="display: none;" data-tags="shots all">
                     <div class="card h-100 text-center border-0 shadow-sm">
+                        <div class="d-flex justify-content-center align-items-center" style="gap:0.5rem;">
+                            <img src="mango bottle front.png" alt="Matcha Shot Front"
+                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
+                            <img src="mango bottle back.png" alt="Matcha Shot Back"
+                                style="height:120px;width:auto;object-fit:contain;border-radius:0.5rem;">
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title" style="color: var(--sattori-brown, #a68b6b);">Matcha Shots (For
-                                energy and refreshments)</h5>
-                            <p class="card-text">
-                                Quick and potent matcha shots designed for instant energy and refreshment. Great for a
-                                healthy boost on the go or as a revitalizing pick-me-up.
-                            </p>
+                            <h5 class="card-title" style="color: var(--sattori-green, #4b8d47);">Matcha Energy Shot</h5>
+                            <p class="mb-1"><strong>Quantity:</strong> 60ml</p>
+                            <p class="mb-1"><strong>Ingredients:</strong> Ceremonial grade matcha, lemon juice, honey, water</p>
+                            <p class="mb-1"><strong>Price:</strong> ₹410</p>
+                            <p class="mb-1"><strong>Storage:</strong> Keep refrigerated</p>
+                            <p class="mb-1"><strong>Best served chilled</strong></p>
+                            <a href="#" class="btn btn-success mt-2 mb-1"
+                                style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">
+                                ₹410
+                            </a>
                         </div>
                     </div>
                 </div>
+                <!-- Add more product cards as needed, using data-tags for filtering -->
             </div>
-
         </div>
     </section>
 
@@ -257,7 +355,7 @@
             style="position:absolute; right:10vw; top:10vh; max-width:15vw; z-index:0; pointer-events:none; transition:transform 0.2s;">
         <div class="container py-5" style="position:relative; z-index:1;">
             <h1 class="mb-4 text-center alcubierre-black" style="color: var(--sattori-black, #050708);">Accessories</h1>
-            <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="row row-cols-1 justify-content-center row-cols-md-4 g-4">
                 <!-- Wooden Cup -->
                 <div class="col">
                     <div class="card h-100 text-center">
@@ -360,12 +458,12 @@
         <img src="cup.png" alt="Matcha Cup" id="recipe-cup-bg"
             style="position:absolute; right:10vw; top:10vh; max-width:15vw; z-index:0; pointer-events:none; transition:transform 0.2s;">
         <div class="container py-5" style="position:relative; z-index:1;">
-            <h1 class="mb-4 text-center alcubierre-black" style="color: var(--sattori-black, #050708);">Matcha Recipes</h1>
+            <h1 class="mb-4 text-center alcubierre-black" style="color: var(--sattori-black, #050708);">Matcha Recipes
+            </h1>
             <!-- Filter Chips -->
             <div class="d-flex justify-content-center mb-4 flex-wrap gap-2" id="recipe-filters">
                 <button class="btn btn-sm btn-outline-success active" data-filter="all" type="button">All</button>
                 <button class="btn btn-sm btn-outline-success" data-filter="iced" type="button">Iced</button>
-                <button class="btn btn-sm btn-outline-success" data-filter="hot" type="button">Hot</button>
                 <button class="btn btn-sm btn-outline-success" data-filter="dairy" type="button">Dairy Based</button>
                 <button class="btn btn-sm btn-outline-success" data-filter="glutenfree" type="button">Gluten
                     Free</button>
@@ -374,11 +472,10 @@
             <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center" id="recipe-list"
                 style="display: flex; justify-content: center;">
                 <!-- Card 1 -->
-                <div class="col recipe-card" data-tags="iced dairy">
+                <!-- <div class="col recipe-card" data-tags="iced dairy">
                     <div class="card h-100">
                         <img src="https://cdn.loveandlemons.com/wp-content/uploads/2023/06/iced-matcha-latte-recipe-580x743.jpg"
-                            class="card-img-top object-fit-cover" alt="Matcha Latte"
-                            style="height: 250px; object-fit: cover;">
+                            class="card-img-top object-fit-cover" alt="Matcha Latte">
                         <div class="card-body">
                             <h5 class="card-title">Matcha Latte</h5>
                             <p class="card-text">Creamy and smooth matcha latte made with milk and ceremonial grade
@@ -388,12 +485,12 @@
                             <small class="text-muted">5 min | Easy</small>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- Card 2 -->
-                <div class="col recipe-card" data-tags="iced glutenfree">
+                <!-- <div class="col recipe-card" data-tags="iced glutenfree">
                     <div class="card h-100">
                         <img src="https://www.justonecookbook.com/wp-content/uploads/2023/07/Iced-Matcha-Latte-0331-V.jpg"
-                            class="card-img-top" alt="Iced Matcha" style="height: 250px; object-fit: cover;">
+                            class="card-img-top" alt="Iced Matcha">
                         <div class="card-body">
                             <h5 class="card-title">Iced Matcha</h5>
                             <p class="card-text">Refreshing iced matcha drink, perfect for hot days. Just add ice and
@@ -403,12 +500,12 @@
                             <small class="text-muted">3 min | Easy</small>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- Card 3 -->
-                <div class="col recipe-card" data-tags="hot glutenfree">
+                <!-- <div class="col recipe-card" data-tags="hot glutenfree">
                     <div class="card h-100">
                         <img src="https://thechestnutbakery.com/wp-content/uploads/2022/04/easy-vegan-matcha-cookies-1024x1536.jpg.webp"
-                            class="card-img-top" alt="Matcha Cookies" style="height: 250px; object-fit: cover;">
+                            class="card-img-top" alt="Matcha Cookies">
                         <div class="card-body">
                             <h5 class="card-title">Matcha Cookies</h5>
                             <p class="card-text">Delicious matcha-infused cookies with a subtle earthy flavor and a
@@ -418,12 +515,12 @@
                             <small class="text-muted">30 min | Medium</small>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- Matcha Mochi Squares -->
                 <div class="col recipe-card" data-tags="glutenfree dairy">
                     <div class="card h-100">
-                        <img src="https://www.justonecookbook.com/wp-content/uploads/2021/03/Matcha-Mochi-0010-I.jpg"
-                            class="card-img-top" alt="Matcha Mochi Squares" style="height: 250px; object-fit: cover;">
+                        <img src="mochisquares.png"
+                            class="card-img-top" alt="Matcha Mochi Squares">
                         <div class="card-body">
                             <h5 class="card-title">Matcha Mochi Squares</h5>
                             <p class="card-text">Chewy, sweet mochi squares infused with vibrant matcha flavor.</p>
@@ -436,11 +533,12 @@
                 <!-- Matcha Tiramisu -->
                 <div class="col recipe-card" data-tags="dairy">
                     <div class="card h-100">
-                        <img src="https://www.justonecookbook.com/wp-content/uploads/2021/03/Matcha-Tiramisu-0010-I.jpg"
-                            class="card-img-top" alt="Matcha Tiramisu" style="height: 250px; object-fit: cover;">
+                        <img src="matchatiramisu.png"
+                            class="card-img-top" alt="Matcha Tiramisu">
                         <div class="card-body">
                             <h5 class="card-title">Matcha Tiramisu</h5>
-                            <p class="card-text">A Japanese twist on the classic tiramisu, layered with matcha cream.</p>
+                            <p class="card-text">A Japanese twist on the classic tiramisu, layered with matcha cream.
+                            </p>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">1 hr | Medium</small>
@@ -450,8 +548,8 @@
                 <!-- Matcha Coconut Ladoos -->
                 <div class="col recipe-card" data-tags="glutenfree dairyfree">
                     <div class="card h-100">
-                        <img src="https://www.cookwithmanali.com/wp-content/uploads/2017/10/Coconut-Ladoo-500x500.jpg"
-                            class="card-img-top" alt="Matcha Coconut Ladoos" style="height: 250px; object-fit: cover;">
+                        <img src="matchaladdoo.png"
+                            class="card-img-top" alt="Matcha Coconut Ladoos">
                         <div class="card-body">
                             <h5 class="card-title">Matcha Coconut Ladoos</h5>
                             <p class="card-text">Indian coconut ladoos with a healthy matcha twist.</p>
@@ -464,8 +562,8 @@
                 <!-- Matcha Ice Cream -->
                 <div class="col recipe-card" data-tags="dairy glutenfree">
                     <div class="card h-100">
-                        <img src="https://www.justonecookbook.com/wp-content/uploads/2018/07/Matcha-Ice-Cream-0012-I.jpg"
-                            class="card-img-top" alt="Matcha Ice Cream" style="height: 250px; object-fit: cover;">
+                        <img src="icecream.png"
+                            class="card-img-top" alt="Matcha Ice Cream">
                         <div class="card-body">
                             <h5 class="card-title">Matcha Ice Cream</h5>
                             <p class="card-text">Rich and creamy Japanese-style matcha green tea ice cream.</p>
@@ -478,11 +576,12 @@
                 <!-- Matcha Granola Bowl (without granola, just fruits) -->
                 <div class="col recipe-card" data-tags="glutenfree dairyfree">
                     <div class="card h-100">
-                        <img src="https://www.crowdedkitchen.com/wp-content/uploads/2021/04/Matcha-Smoothie-Bowl-6.jpg"
-                            class="card-img-top" alt="Matcha Granola Bowl" style="height: 250px; object-fit: cover;">
+                        <img src="granola.png"
+                            class="card-img-top" alt="Matcha Granola Bowl">
                         <div class="card-body">
                             <h5 class="card-title">Matcha Granola Bowl (Fruits Only)</h5>
-                            <p class="card-text">A refreshing smoothie bowl with matcha and fresh fruits, no granola.</p>
+                            <p class="card-text">A refreshing smoothie bowl with matcha and fresh fruits, no granola.
+                            </p>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">10 min | Easy</small>
@@ -492,8 +591,8 @@
                 <!-- Yakult Matcha Drink -->
                 <div class="col recipe-card" data-tags="iced dairy">
                     <div class="card h-100">
-                        <img src="https://i.pinimg.com/originals/9e/2b/2e/9e2b2e6e2e2e2e2e2e2e2e2e2e2e2e2e.jpg"
-                            class="card-img-top" alt="Yakult Matcha Drink" style="height: 250px; object-fit: cover;">
+                        <img src="yakult.png"
+                            class="card-img-top" alt="Yakult Matcha Drink">
                         <div class="card-body">
                             <h5 class="card-title">Yakult Matcha Drink</h5>
                             <p class="card-text">A tangy, probiotic-rich Yakult drink blended with matcha and ice.</p>
@@ -506,11 +605,12 @@
                 <!-- Soju Matcha Drink -->
                 <div class="col recipe-card" data-tags="iced">
                     <div class="card h-100">
-                        <img src="https://www.koreanbapsang.com/wp-content/uploads/2022/07/DSC_1819-2.jpg"
-                            class="card-img-top" alt="Soju Matcha Drink" style="height: 250px; object-fit: cover;">
+                        <img src="soju.png"
+                            class="card-img-top" alt="Soju Matcha Drink">
                         <div class="card-body">
                             <h5 class="card-title">Soju Matcha Drink</h5>
-                            <p class="card-text">A fun cocktail combining soju, matcha, and citrus for a refreshing kick.</p>
+                            <p class="card-text">A fun cocktail combining soju, matcha, and citrus for a refreshing
+                                kick.</p>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">5 min | Easy</small>
@@ -520,8 +620,8 @@
                 <!-- Coconut Milk Matcha Drink -->
                 <div class="col recipe-card" data-tags="iced dairyfree">
                     <div class="card h-100">
-                        <img src="https://www.alphafoodie.com/wp-content/uploads/2021/07/Iced-Matcha-Latte-1-of-1.jpeg"
-                            class="card-img-top" alt="Coconut Milk Matcha Drink" style="height: 250px; object-fit: cover;">
+                        <img src="coconut.png"
+                            class="card-img-top" alt="Coconut Milk Matcha Drink">
                         <div class="card-body">
                             <h5 class="card-title">Coconut Milk Matcha Drink</h5>
                             <p class="card-text">A creamy, dairy-free matcha latte made with coconut milk and ice.</p>
@@ -908,229 +1008,250 @@
             });
         });
 
+        // Product filter chips logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('#product-filters button');
+            const productCards = document.querySelectorAll('.product-card');
+
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.getAttribute('data-filter');
+                    productCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-tags').includes(filter)) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
         // Recipe details data (add more as needed)
         const recipeDetails = {
             "Matcha Latte": {
-            img: "https://cdn.loveandlemons.com/wp-content/uploads/2023/06/iced-matcha-latte-recipe-580x743.jpg",
-            title: "Matcha Latte",
-            time: "5 min | Easy",
-            description: "Creamy and smooth matcha latte made with milk and ceremonial grade matcha.",
-            ingredients: [
-                "1 tsp ceremonial grade matcha",
-                "60ml hot water (not boiling)",
-                "200ml milk (dairy or plant-based)",
-                "1-2 tsp sweetener (optional)"
-            ],
-            steps: [
-                "Sift matcha into a bowl.",
-                "Add hot water and whisk until frothy.",
-                "Heat and froth milk, then pour over matcha.",
-                "Sweeten to taste and enjoy."
-            ]
+                img: "https://cdn.loveandlemons.com/wp-content/uploads/2023/06/iced-matcha-latte-recipe-580x743.jpg",
+                title: "Matcha Latte",
+                time: "5 min | Easy",
+                description: "Creamy and smooth matcha latte made with milk and ceremonial grade matcha.",
+                ingredients: [
+                    "1 tsp ceremonial grade matcha",
+                    "60ml hot water (not boiling)",
+                    "200ml milk (dairy or plant-based)",
+                    "1-2 tsp sweetener (optional)"
+                ],
+                steps: [
+                    "Sift matcha into a bowl.",
+                    "Add hot water and whisk until frothy.",
+                    "Heat and froth milk, then pour over matcha.",
+                    "Sweeten to taste and enjoy."
+                ]
             },
             "Iced Matcha": {
-            img: "https://www.justonecookbook.com/wp-content/uploads/2023/07/Iced-Matcha-Latte-0331-V.jpg",
-            title: "Iced Matcha",
-            time: "3 min | Easy",
-            description: "Refreshing iced matcha drink, perfect for hot days. Just add ice and enjoy!",
-            ingredients: [
-                "1 tsp matcha powder",
-                "60ml hot water",
-                "Ice cubes",
-                "150ml cold water or milk",
-                "Sweetener (optional)"
-            ],
-            steps: [
-                "Sift matcha into a cup.",
-                "Add hot water and whisk until smooth.",
-                "Fill glass with ice, pour matcha over.",
-                "Add cold water or milk, stir and enjoy."
-            ]
+                img: "https://www.justonecookbook.com/wp-content/uploads/2023/07/Iced-Matcha-Latte-0331-V.jpg",
+                title: "Iced Matcha",
+                time: "3 min | Easy",
+                description: "Refreshing iced matcha drink, perfect for hot days. Just add ice and enjoy!",
+                ingredients: [
+                    "1 tsp matcha powder",
+                    "60ml hot water",
+                    "Ice cubes",
+                    "150ml cold water or milk",
+                    "Sweetener (optional)"
+                ],
+                steps: [
+                    "Sift matcha into a cup.",
+                    "Add hot water and whisk until smooth.",
+                    "Fill glass with ice, pour matcha over.",
+                    "Add cold water or milk, stir and enjoy."
+                ]
             },
             "Matcha Cookies": {
-            img: "https://thechestnutbakery.com/wp-content/uploads/2022/04/easy-vegan-matcha-cookies-1024x1536.jpg.webp",
-            title: "Matcha Cookies",
-            time: "30 min | Medium",
-            description: "Delicious matcha-infused cookies with a subtle earthy flavor and a sweet finish.",
-            ingredients: [
-                "1 cup flour",
-                "1 tbsp matcha powder",
-                "1/2 cup sugar",
-                "1/2 cup butter (softened)",
-                "1 egg",
-                "1/2 tsp baking powder",
-                "Pinch of salt"
-            ],
-            steps: [
-                "Preheat oven to 170°C (340°F).",
-                "Cream butter and sugar, add egg.",
-                "Mix in flour, matcha, baking powder, salt.",
-                "Shape dough, place on tray.",
-                "Bake 12-15 min until edges are golden."
-            ]
+                img: "https://thechestnutbakery.com/wp-content/uploads/2022/04/easy-vegan-matcha-cookies-1024x1536.jpg.webp",
+                title: "Matcha Cookies",
+                time: "30 min | Medium",
+                description: "Delicious matcha-infused cookies with a subtle earthy flavor and a sweet finish.",
+                ingredients: [
+                    "1 cup flour",
+                    "1 tbsp matcha powder",
+                    "1/2 cup sugar",
+                    "1/2 cup butter (softened)",
+                    "1 egg",
+                    "1/2 tsp baking powder",
+                    "Pinch of salt"
+                ],
+                steps: [
+                    "Preheat oven to 170°C (340°F).",
+                    "Cream butter and sugar, add egg.",
+                    "Mix in flour, matcha, baking powder, salt.",
+                    "Shape dough, place on tray.",
+                    "Bake 12-15 min until edges are golden."
+                ]
             },
             "Matcha Mochi Squares": {
-            img: "https://www.justonecookbook.com/wp-content/uploads/2021/03/Matcha-Mochi-0010-I.jpg",
-            title: "Matcha Mochi Squares",
-            time: "45 min | Medium",
-            description: "Chewy, sweet mochi squares infused with vibrant matcha flavor.",
-            ingredients: [
-                "1 cup mochiko (sweet rice flour)",
-                "3/4 cup sugar",
-                "1 tbsp matcha powder",
-                "1 cup milk (or coconut milk for dairy-free)",
-                "1/2 tsp baking powder",
-                "1 egg",
-                "1 tbsp melted butter (or coconut oil for dairy-free)"
-            ],
-            steps: [
-                "Preheat oven to 175°C (350°F).",
-                "Mix mochiko, sugar, matcha, and baking powder.",
-                "Add milk, egg, and melted butter. Mix until smooth.",
-                "Pour into greased baking dish.",
-                "Bake 30-35 min. Cool, cut into squares, and enjoy."
-            ]
+                img: "mochisquares.png",
+                title: "Matcha Mochi Squares",
+                time: "45 min | Medium",
+                description: "Chewy, sweet mochi squares infused with vibrant matcha flavor.",
+                ingredients: [
+                    "1 cup mochiko (sweet rice flour)",
+                    "3/4 cup sugar",
+                    "1 tbsp matcha powder",
+                    "1 cup milk (or coconut milk for dairy-free)",
+                    "1/2 tsp baking powder",
+                    "1 egg",
+                    "1 tbsp melted butter (or coconut oil for dairy-free)"
+                ],
+                steps: [
+                    "Preheat oven to 175°C (350°F).",
+                    "Mix mochiko, sugar, matcha, and baking powder.",
+                    "Add milk, egg, and melted butter. Mix until smooth.",
+                    "Pour into greased baking dish.",
+                    "Bake 30-35 min. Cool, cut into squares, and enjoy."
+                ]
             },
             "Matcha Tiramisu": {
-            img: "https://www.justonecookbook.com/wp-content/uploads/2021/03/Matcha-Tiramisu-0010-I.jpg",
-            title: "Matcha Tiramisu",
-            time: "1 hr | Medium",
-            description: "A Japanese twist on the classic tiramisu, layered with matcha cream.",
-            ingredients: [
-                "200g ladyfinger biscuits",
-                "2 tsp matcha powder",
-                "200ml hot water",
-                "250g mascarpone cheese",
-                "200ml heavy cream",
-                "3 tbsp sugar",
-                "2 egg yolks"
-            ],
-            steps: [
-                "Whisk egg yolks and sugar until pale.",
-                "Add mascarpone and mix until smooth.",
-                "Whip cream to stiff peaks, fold into mascarpone mixture.",
-                "Dissolve matcha in hot water.",
-                "Dip ladyfingers in matcha, layer in dish.",
-                "Spread cream, repeat layers, finish with cream.",
-                "Dust with matcha, chill 4+ hours before serving."
-            ]
+                img: "matchatiramisu.png",
+                title: "Matcha Tiramisu",
+                time: "1 hr | Medium",
+                description: "A Japanese twist on the classic tiramisu, layered with matcha cream.",
+                ingredients: [
+                    "200g ladyfinger biscuits",
+                    "2 tsp matcha powder",
+                    "200ml hot water",
+                    "250g mascarpone cheese",
+                    "200ml heavy cream",
+                    "3 tbsp sugar",
+                    "2 egg yolks"
+                ],
+                steps: [
+                    "Whisk egg yolks and sugar until pale.",
+                    "Add mascarpone and mix until smooth.",
+                    "Whip cream to stiff peaks, fold into mascarpone mixture.",
+                    "Dissolve matcha in hot water.",
+                    "Dip ladyfingers in matcha, layer in dish.",
+                    "Spread cream, repeat layers, finish with cream.",
+                    "Dust with matcha, chill 4+ hours before serving."
+                ]
             },
             "Matcha Coconut Ladoos": {
-            img: "https://www.cookwithmanali.com/wp-content/uploads/2017/10/Coconut-Ladoo-500x500.jpg",
-            title: "Matcha Coconut Ladoos",
-            time: "20 min | Easy",
-            description: "Indian coconut ladoos with a healthy matcha twist.",
-            ingredients: [
-                "2 cups desiccated coconut",
-                "1/2 cup condensed milk (or coconut condensed milk for vegan)",
-                "1 tsp matcha powder",
-                "1/2 tsp cardamom powder",
-                "Extra coconut for rolling"
-            ],
-            steps: [
-                "Mix coconut, condensed milk, matcha, and cardamom.",
-                "Shape into small balls.",
-                "Roll in extra coconut.",
-                "Chill for 10 min and serve."
-            ]
+                img: "matchaladdoo.png",
+                title: "Matcha Coconut Ladoos",
+                time: "20 min | Easy",
+                description: "Indian coconut ladoos with a healthy matcha twist.",
+                ingredients: [
+                    "2 cups desiccated coconut",
+                    "1/2 cup condensed milk (or coconut condensed milk for vegan)",
+                    "1 tsp matcha powder",
+                    "1/2 tsp cardamom powder",
+                    "Extra coconut for rolling"
+                ],
+                steps: [
+                    "Mix coconut, condensed milk, matcha, and cardamom.",
+                    "Shape into small balls.",
+                    "Roll in extra coconut.",
+                    "Chill for 10 min and serve."
+                ]
             },
             "Matcha Ice Cream": {
-            img: "https://www.justonecookbook.com/wp-content/uploads/2018/07/Matcha-Ice-Cream-0012-I.jpg",
-            title: "Matcha Ice Cream",
-            time: "4 hr | Medium",
-            description: "Rich and creamy Japanese-style matcha green tea ice cream.",
-            ingredients: [
-                "2 cups heavy cream",
-                "1 cup whole milk",
-                "3/4 cup sugar",
-                "2 tbsp matcha powder",
-                "4 egg yolks"
-            ],
-            steps: [
-                "Heat milk and cream until just simmering.",
-                "Whisk egg yolks and sugar until pale.",
-                "Slowly add hot milk to yolks, whisking.",
-                "Return to pan, cook until thickened.",
-                "Whisk in matcha powder.",
-                "Cool, churn in ice cream maker, freeze until firm."
-            ]
+                img: "icecream.png",
+                title: "Matcha Ice Cream",
+                time: "4 hr | Medium",
+                description: "Rich and creamy Japanese-style matcha green tea ice cream.",
+                ingredients: [
+                    "2 cups heavy cream",
+                    "1 cup whole milk",
+                    "3/4 cup sugar",
+                    "2 tbsp matcha powder",
+                    "4 egg yolks"
+                ],
+                steps: [
+                    "Heat milk and cream until just simmering.",
+                    "Whisk egg yolks and sugar until pale.",
+                    "Slowly add hot milk to yolks, whisking.",
+                    "Return to pan, cook until thickened.",
+                    "Whisk in matcha powder.",
+                    "Cool, churn in ice cream maker, freeze until firm."
+                ]
             },
             "Matcha Granola Bowl (Fruits Only)": {
-            img: "https://www.crowdedkitchen.com/wp-content/uploads/2021/04/Matcha-Smoothie-Bowl-6.jpg",
-            title: "Matcha Granola Bowl (Fruits Only)",
-            time: "10 min | Easy",
-            description: "A refreshing smoothie bowl with matcha and fresh fruits, no granola.",
-            ingredients: [
-                "1 frozen banana",
-                "1/2 cup frozen mango or pineapple",
-                "1 tsp matcha powder",
-                "1/2 cup coconut milk",
-                "Fresh fruits for topping"
-            ],
-            steps: [
-                "Blend banana, mango, matcha, and coconut milk until smooth.",
-                "Pour into a bowl.",
-                "Top with sliced fruits of choice.",
-                "Serve immediately."
-            ]
+                img: "granola.png",
+                title: "Matcha Granola Bowl (Fruits Only)",
+                time: "10 min | Easy",
+                description: "A refreshing smoothie bowl with matcha and fresh fruits, no granola.",
+                ingredients: [
+                    "1 frozen banana",
+                    "1/2 cup frozen mango or pineapple",
+                    "1 tsp matcha powder",
+                    "1/2 cup coconut milk",
+                    "Fresh fruits for topping"
+                ],
+                steps: [
+                    "Blend banana, mango, matcha, and coconut milk until smooth.",
+                    "Pour into a bowl.",
+                    "Top with sliced fruits of choice.",
+                    "Serve immediately."
+                ]
             },
             "Yakult Matcha Drink": {
-            img: "https://i.pinimg.com/originals/9e/2b/2e/9e2b2e6e2e2e2e2e2e2e2e2e2e2e2e2e.jpg",
-            title: "Yakult Matcha Drink",
-            time: "5 min | Easy",
-            description: "A tangy, probiotic-rich Yakult drink blended with matcha and ice.",
-            ingredients: [
-                "1 bottle Yakult",
-                "1 tsp matcha powder",
-                "60ml hot water",
-                "Ice cubes",
-                "Sweetener (optional)"
-            ],
-            steps: [
-                "Dissolve matcha in hot water, whisk until smooth.",
-                "Fill glass with ice.",
-                "Add Yakult and matcha mixture.",
-                "Stir well and enjoy."
-            ]
+                img: "yakult.png",
+                title: "Yakult Matcha Drink",
+                time: "5 min | Easy",
+                description: "A tangy, probiotic-rich Yakult drink blended with matcha and ice.",
+                ingredients: [
+                    "1 bottle Yakult",
+                    "1 tsp matcha powder",
+                    "60ml hot water",
+                    "Ice cubes",
+                    "Sweetener (optional)"
+                ],
+                steps: [
+                    "Dissolve matcha in hot water, whisk until smooth.",
+                    "Fill glass with ice.",
+                    "Add Yakult and matcha mixture.",
+                    "Stir well and enjoy."
+                ]
             },
             "Soju Matcha Drink": {
-            img: "https://www.koreanbapsang.com/wp-content/uploads/2022/07/DSC_1819-2.jpg",
-            title: "Soju Matcha Drink",
-            time: "5 min | Easy",
-            description: "A fun cocktail combining soju, matcha, and citrus for a refreshing kick.",
-            ingredients: [
-                "1 tsp matcha powder",
-                "60ml hot water",
-                "60ml soju",
-                "30ml lemon juice",
-                "Ice cubes",
-                "Sweetener (optional)"
-            ],
-            steps: [
-                "Dissolve matcha in hot water.",
-                "Fill shaker with ice, add matcha, soju, lemon juice, and sweetener.",
-                "Shake well.",
-                "Strain into glass with ice and serve."
-            ]
+                img: "soju.png",
+                title: "Soju Matcha Drink",
+                time: "5 min | Easy",
+                description: "A fun cocktail combining soju, matcha, and citrus for a refreshing kick.",
+                ingredients: [
+                    "1 tsp matcha powder",
+                    "60ml hot water",
+                    "60ml soju",
+                    "30ml lemon juice",
+                    "Ice cubes",
+                    "Sweetener (optional)"
+                ],
+                steps: [
+                    "Dissolve matcha in hot water.",
+                    "Fill shaker with ice, add matcha, soju, lemon juice, and sweetener.",
+                    "Shake well.",
+                    "Strain into glass with ice and serve."
+                ]
             },
             "Coconut Milk Matcha Drink": {
-            img: "https://www.alphafoodie.com/wp-content/uploads/2021/07/Iced-Matcha-Latte-1-of-1.jpeg",
-            title: "Coconut Milk Matcha Drink",
-            time: "5 min | Easy",
-            description: "A creamy, dairy-free matcha latte made with coconut milk and ice.",
-            ingredients: [
-                "1 tsp matcha powder",
-                "60ml hot water",
-                "150ml coconut milk",
-                "Ice cubes",
-                "Sweetener (optional)"
-            ],
-            steps: [
-                "Dissolve matcha in hot water, whisk until frothy.",
-                "Fill glass with ice.",
-                "Pour coconut milk and matcha over ice.",
-                "Stir and sweeten to taste."
-            ]
+                img: "coconut.png",
+                title: "Coconut Milk Matcha Drink",
+                time: "5 min | Easy",
+                description: "A creamy, dairy-free matcha latte made with coconut milk and ice.",
+                ingredients: [
+                    "1 tsp matcha powder",
+                    "60ml hot water",
+                    "150ml coconut milk",
+                    "Ice cubes",
+                    "Sweetener (optional)"
+                ],
+                steps: [
+                    "Dissolve matcha in hot water, whisk until frothy.",
+                    "Fill glass with ice.",
+                    "Pour coconut milk and matcha over ice.",
+                    "Stir and sweeten to taste."
+                ]
             }
         };
 
