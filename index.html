@@ -10,17 +10,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="fonts.css" rel="stylesheet">
     <link href="colors.css" rel="stylesheet">
-    <style>
-        .card:hover {
-            box-shadow: 0 4px 20px 0 var(--sattori-light-green, #78be6d), 0 1.5px 6px 0 var(--sattori-light-green, #78be6d, 0.25);
-            transition: box-shadow 0.3s;
-        }
 
+    <!-- Main Styles -->
+    <style>
+        /* General Card Hover */
         .card {
             transition: box-shadow 0.3s;
         }
 
-        /* Make each section full screen height minus navbar */
+        .card:hover {
+            box-shadow: 0 4px 20px 0 var(--sattori-light-green, #78be6d), 0 1.5px 6px 0 var(--sattori-light-green, #78be6d, 0.25);
+        }
+
+        /* Section Layouts */
         #home,
         #about,
         #recipe {
@@ -29,7 +31,24 @@
             align-items: center;
         }
 
-        /* Sticky navbar */
+        @media (max-width: 768px) {
+
+            #home,
+            #about,
+            #recipe {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        .spa-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Navbar */
         .navbar {
             position: sticky;
             top: 0;
@@ -77,19 +96,10 @@
             font-weight: bold;
         }
 
+        /* Brand Highlight */
         .brand-highlight {
             color: var(--sattori-light-green, #78be6d);
             font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-
-            #home,
-            #about,
-            #recipe {
-                flex-direction: column;
-                align-items: stretch;
-            }
         }
 
         /* Parallax wavy background for home section */
@@ -116,14 +126,7 @@
             z-index: 1;
         }
 
-        .spa-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Animate card on hover */
+        /* Recipe Card */
         .recipe-card .card {
             transition: transform 0.25s cubic-bezier(.4, 2, .6, 1), box-shadow 0.25s;
             cursor: pointer;
@@ -145,6 +148,7 @@
             transform: scale(1.15);
         }
 
+        /* Store Card */
         .store-card .card img {
             transition: transform 0.2s;
             height: 180px;
@@ -155,7 +159,7 @@
             transform: scale(1.15);
         }
 
-        /* Product card image hover effect */
+        /* Product Card */
         .product-card .card {
             transition: transform 0.25s cubic-bezier(.4, 2, .6, 1), box-shadow 0.25s;
         }
@@ -229,12 +233,14 @@
             <div class="container" style="max-width:100vw;">
                 <img src="pictologo@300x.png" alt="Sattori Logo" style="width: 20vw; object-fit:contain;">
                 <h1 class="display-4">
-                    Welcome to <span id="brand-animated" class="fw-bolder">Sattori <span class="stkaiti-regular">悟り</span></span>
+                    Welcome to <span id="brand-animated" class="fw-bolder">Sattori <span
+                            class="stkaiti-regular">悟り</span></span>
                 </h1>
                 <p class="lead">Experience the rich tradition and flavor of high-quality Japanese matcha.
                 </p>
                 <a href="#product" class="btn btn-success btn-lg"
-                    style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">SHOP NOW</a>
+                    style="background: var(--sattori-green, #4b8d47); border-color: var(--sattori-green, #4b8d47);">SHOP
+                    NOW</a>
             </div>
         </div>
     </section>
@@ -249,7 +255,8 @@
             <!-- Filter Chips -->
             <div class="d-flex justify-content-center mb-4 flex-wrap gap-2" id="product-filters">
                 <!-- <button class="btn btn-sm btn-outline-success active" data-filter="all" type="button">All</button> -->
-                <button class="btn btn-sm btn-outline-success active" data-filter="matcha" type="button">Milk Based Matcha
+                <button class="btn btn-sm btn-outline-success active" data-filter="matcha" type="button">Milk Based
+                    Matcha
                     Drinks (Flavoured)</button>
                 <button class="btn btn-sm btn-outline-success" data-filter="powder" type="button">Imperial Green Tea
                     Powder</button>
@@ -270,7 +277,8 @@
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Classic Matcha Latte</h5>
                             <p class="mb-1"><strong>Quantity:</strong> 400ml</p>
-                            <p class="mb-1"><strong>Ingredients:</strong> Ceremonial grade matcha, oat milk, Monk fruit</p>
+                            <p class="mb-1"><strong>Ingredients:</strong> Ceremonial grade matcha, oat milk, Monk fruit
+                            </p>
                             <p class="mb-1"><strong>Price:</strong> ₹380</p>
                             <p class="mb-1"><strong>Storage:</strong> Keep refrigerated</p>
                             <p class="mb-1"><strong>Best served chilled</strong></p>
@@ -293,7 +301,8 @@
                             <h5 class="card-title alcubierre-bold">Blueberry Matcha
                                 Latte</h5>
                             <p class="mb-1"><strong>Quantity:</strong> 450ml</p>
-                            <p class="mb-1"><strong>Ingredients:</strong> Ceremonial grade matcha, Blueberry purée, dairy milk, Monk fruit</p>
+                            <p class="mb-1"><strong>Ingredients:</strong> Ceremonial grade matcha, Blueberry purée,
+                                dairy milk, Monk fruit</p>
                             <p class="mb-1"><strong>Price:</strong> ₹410</p>
                             <p class="mb-1"><strong>Storage:</strong> Keep refrigerated</p>
                             <p class="mb-1"><strong>Best served chilled</strong></p>
@@ -316,7 +325,8 @@
                             <h5 class="card-title alcubierre-bold">Mango Matcha
                                 Latte</h5>
                             <p class="mb-1"><strong>Quantity:</strong> 400ml</p>
-                            <p class="mb-1"><strong>Ingredients:</strong> Ceremonial grade matcha, Ripe mango purée, oat milk, Monk fruit</p>
+                            <p class="mb-1"><strong>Ingredients:</strong> Ceremonial grade matcha, Ripe mango purée, oat
+                                milk, Monk fruit</p>
                             <p class="mb-1"><strong>Price:</strong> ₹395</p>
                             <p class="mb-1"><strong>Storage:</strong> Keep refrigerated</p>
                             <p class="mb-1"><strong>Best served chilled</strong></p>
@@ -338,7 +348,8 @@
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Strawberry Matcha Latte</h5>
                             <p class="mb-1"><strong>Quantity:</strong> 400ml</p>
-                            <p class="mb-1"><strong>Ingredients:</strong> Ceremonial grade matcha, Strawberry purée, dairy milk, Monk fruit</p>
+                            <p class="mb-1"><strong>Ingredients:</strong> Ceremonial grade matcha, Strawberry purée,
+                                dairy milk, Monk fruit</p>
                             <p class="mb-1"><strong>Price:</strong> ₹395</p>
                             <p class="mb-1"><strong>Storage:</strong> Keep refrigerated</p>
                             <p class="mb-1"><strong>Best served chilled</strong></p>
@@ -446,8 +457,7 @@
                 <!-- Wooden Cup -->
                 <div class="col store-card">
                     <div class="card h-100 text-center">
-                        <img src="woodencup.png"
-                            class="card-img-top" alt="Wooden Cup">
+                        <img src="woodencup.png" class="card-img-top" alt="Wooden Cup">
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Wooden Cup</h5>
                             <p class="card-text">Handcrafted wooden cup for a natural and warm matcha experience.</p>
@@ -461,8 +471,7 @@
                 <!-- Wooden Spoons -->
                 <div class="col store-card">
                     <div class="card h-100 text-center">
-                        <img src="spoon.png"
-                            class="card-img-top" alt="Wooden Spoons">
+                        <img src="spoon.png" class="card-img-top" alt="Wooden Spoons">
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Wooden Spoons</h5>
                             <p class="card-text">Set of 2 wooden spoons, perfect for scooping matcha or stirring drinks.
@@ -502,11 +511,13 @@
                                     <img src="8-01.png" class="d-block w-100" alt="Sticker 7">
                                 </div>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#stickersSlider" data-bs-slide="prev" style="filter: invert(1);">
+                            <button class="carousel-control-prev" type="button" data-bs-target="#stickersSlider"
+                                data-bs-slide="prev" style="filter: invert(1);">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Previous</span>
                             </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#stickersSlider" data-bs-slide="next" style="filter: invert(1);">
+                            <button class="carousel-control-next" type="button" data-bs-target="#stickersSlider"
+                                data-bs-slide="next" style="filter: invert(1);">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="visually-hidden">Next</span>
                             </button>
@@ -526,8 +537,7 @@
                 <!-- Bamboo Whisk -->
                 <div class="col store-card">
                     <div class="card h-100 text-center">
-                        <img src="chasenwhisk.png"
-                            class="card-img-top" alt="Bamboo Whisk">
+                        <img src="chasenwhisk.png" class="card-img-top" alt="Bamboo Whisk">
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Bamboo Whisk</h5>
                             <p class="card-text">Traditional bamboo whisk (chasen) for perfectly frothy matcha.</p>
@@ -541,8 +551,7 @@
                 <!-- Ceramic Whisk Holder -->
                 <div class="col store-card">
                     <div class="card h-100 text-center">
-                        <img src="holder.png"
-                            class="card-img-top" alt="Ceramic Whisk Holder">
+                        <img src="holder.png" class="card-img-top" alt="Ceramic Whisk Holder">
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Ceramic Whisk Holder</h5>
                             <p class="card-text">Elegant ceramic holder to keep your whisk in perfect shape.</p>
@@ -556,8 +565,7 @@
                 <!-- Ceramic Bowl -->
                 <div class="col store-card">
                     <div class="card h-100 text-center">
-                        <img src="bowl.png"
-                            class="card-img-top" alt="Ceramic Bowl">
+                        <img src="bowl.png" class="card-img-top" alt="Ceramic Bowl">
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Ceramic Bowl</h5>
                             <p class="card-text">Artisan ceramic bowl for authentic matcha preparation and serving.</p>
@@ -578,7 +586,8 @@
         <img src="cup.png" alt="Matcha Cup" id="recipe-cup-bg"
             style="position:absolute; right:10vw; top:10vh; max-width:15vw; z-index:0; pointer-events:none; transition:transform 0.2s;">
         <div class="container py-5" style="position:relative; z-index:1;">
-            <h1 class="mb-4 text-center alcubierre-black" style="color: var(--sattori-black, #050708);">Matcha <span class="stkaiti-black">抹茶</span> Recipes
+            <h1 class="mb-4 text-center alcubierre-black" style="color: var(--sattori-black, #050708);">Matcha <span
+                    class="stkaiti-black">抹茶</span> Recipes
             </h1>
             <!-- Filter Chips -->
             <div class="d-flex justify-content-center mb-4 flex-wrap gap-2" id="recipe-filters">
@@ -639,8 +648,7 @@
                 <!-- Matcha Mochi Squares -->
                 <div class="col recipe-card" data-tags="glutenfree dairy">
                     <div class="card h-100">
-                        <img src="mochisquares.png"
-                            class="card-img-top" alt="Matcha Mochi Squares">
+                        <img src="mochisquares.png" class="card-img-top" alt="Matcha Mochi Squares">
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Matcha Mochi Squares</h5>
                             <p class="card-text">Chewy, sweet mochi squares infused with vibrant matcha flavor.</p>
@@ -653,8 +661,7 @@
                 <!-- Matcha Tiramisu -->
                 <div class="col recipe-card" data-tags="dairy">
                     <div class="card h-100">
-                        <img src="matchatiramisu.png"
-                            class="card-img-top" alt="Matcha Tiramisu">
+                        <img src="matchatiramisu.png" class="card-img-top" alt="Matcha Tiramisu">
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Matcha Tiramisu</h5>
                             <p class="card-text">A Japanese twist on the classic tiramisu, layered with matcha cream.
@@ -668,8 +675,7 @@
                 <!-- Matcha Coconut Ladoos -->
                 <div class="col recipe-card" data-tags="glutenfree dairyfree">
                     <div class="card h-100">
-                        <img src="matchaladdoo.png"
-                            class="card-img-top" alt="Matcha Coconut Ladoos">
+                        <img src="matchaladdoo.png" class="card-img-top" alt="Matcha Coconut Ladoos">
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Matcha Coconut Ladoos</h5>
                             <p class="card-text">Indian coconut ladoos with a healthy matcha twist.</p>
@@ -682,8 +688,7 @@
                 <!-- Matcha Ice Cream -->
                 <div class="col recipe-card" data-tags="dairy glutenfree">
                     <div class="card h-100">
-                        <img src="icecream.png"
-                            class="card-img-top" alt="Matcha Ice Cream">
+                        <img src="icecream.png" class="card-img-top" alt="Matcha Ice Cream">
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Matcha Ice Cream</h5>
                             <p class="card-text">Rich and creamy Japanese-style matcha green tea ice cream.</p>
@@ -696,8 +701,7 @@
                 <!-- Matcha Granola Bowl (without granola, just fruits) -->
                 <div class="col recipe-card" data-tags="glutenfree dairyfree">
                     <div class="card h-100">
-                        <img src="granola.png"
-                            class="card-img-top" alt="Matcha Granola Bowl">
+                        <img src="granola.png" class="card-img-top" alt="Matcha Granola Bowl">
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Matcha Granola Bowl (Fruits Only)</h5>
                             <p class="card-text">A refreshing smoothie bowl with matcha and fresh fruits, no granola.
@@ -711,8 +715,7 @@
                 <!-- Yakult Matcha Drink -->
                 <div class="col recipe-card" data-tags="iced dairy">
                     <div class="card h-100">
-                        <img src="yakult.png"
-                            class="card-img-top" alt="Yakult Matcha Drink">
+                        <img src="yakult.png" class="card-img-top" alt="Yakult Matcha Drink">
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Yakult Matcha Drink</h5>
                             <p class="card-text">A tangy, probiotic-rich Yakult drink blended with matcha and ice.</p>
@@ -725,8 +728,7 @@
                 <!-- Soju Matcha Drink -->
                 <div class="col recipe-card" data-tags="iced">
                     <div class="card h-100">
-                        <img src="soju.png"
-                            class="card-img-top" alt="Soju Matcha Drink">
+                        <img src="soju.png" class="card-img-top" alt="Soju Matcha Drink">
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Soju Matcha Drink</h5>
                             <p class="card-text">A fun cocktail combining soju, matcha, and citrus for a refreshing
@@ -740,8 +742,7 @@
                 <!-- Coconut Milk Matcha Drink -->
                 <div class="col recipe-card" data-tags="iced dairyfree">
                     <div class="card h-100">
-                        <img src="coconut.png"
-                            class="card-img-top" alt="Coconut Milk Matcha Drink">
+                        <img src="coconut.png" class="card-img-top" alt="Coconut Milk Matcha Drink">
                         <div class="card-body">
                             <h5 class="card-title alcubierre-bold">Coconut Milk Matcha Drink</h5>
                             <p class="card-text">A creamy, dairy-free matcha latte made with coconut milk and ice.</p>
@@ -761,7 +762,8 @@
         <img src="leaves.png" alt="Matcha Leaves" id="whymatcha-leaves-bg"
             style="position:absolute; right:10vw; top:10vh; max-width:15vw; z-index:0; pointer-events:none; transition:transform 0.2s;">
         <div class="container py-5" style="position:relative; z-index:1;">
-            <h1 class="mb-4 text-center alcubierre-black" style="color: var(--sattori-black, #050708);">Why Matcha <span class="stkaiti-black">抹茶</span>?</h1>
+            <h1 class="mb-4 text-center alcubierre-black" style="color: var(--sattori-black, #050708);">Why Matcha <span
+                    class="stkaiti-black">抹茶</span>?</h1>
             <div>
                 <div class="row align-items-center">
                     <div class="col-md-3 mb-4 mb-md-0 text-center">
@@ -925,9 +927,10 @@
         </div>
     </footer> -->
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Highlight nav and section based on scroll position
+        // --- Navigation Highlight & Scroll ---
         document.addEventListener('DOMContentLoaded', function () {
             // Show all sections for scrolling
             document.querySelectorAll('.spa-section').forEach(function (sec) {
@@ -993,98 +996,73 @@
             }
         });
 
-        // Parallax effect for wavy background
+        // --- Parallax Effects ---
         window.addEventListener('scroll', function () {
+            // Home wavy
             const wavy = document.getElementById('wavy-bg');
             if (wavy) {
-                // Move the wave slower than scroll for parallax
                 let offset = window.scrollY * 0.3;
                 wavy.style.transform = `translateY(${offset}px)`;
             }
-        });
-
-        // Parallax effect for product section matcha bowl background
-        window.addEventListener('scroll', function () {
+            // Product bowl
             const product = document.getElementById('product');
             const bowl = document.getElementById('product-bowl-bg');
             if (product && bowl) {
                 const rect = product.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    // Parallax: move slower than scroll
                     const scrolled = Math.max(0, window.innerHeight + rect.top);
-                    // Subtle up/down movement and slight scale
                     const sectionHeight = rect.height || product.offsetHeight;
                     const visible = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + sectionHeight)));
                     const scale = 1 + visible * 0.08;
                     bowl.style.transform = `translateY(${scrolled * 0.12}px) scale(${scale})`;
                 }
             }
-        });
-
-        // Parallax effect for store section whisk background
-        window.addEventListener('scroll', function () {
+            // Store whisk
             const store = document.getElementById('store');
             const whisk = document.getElementById('store-whisk-bg');
             if (store && whisk) {
                 const rect = store.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    // Parallax: move slower than scroll
                     const scrolled = Math.max(0, window.innerHeight + rect.top);
-                    // Subtle up/down movement and slight scale
                     const sectionHeight = rect.height || store.offsetHeight;
                     const visible = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + sectionHeight)));
                     const scale = 1 + visible * 0.08;
                     whisk.style.transform = `translateY(${scrolled * 0.10}px) scale(${scale})`;
                 }
             }
-        });
-
-        // Parallax effect for recipe section cup background
-        window.addEventListener('scroll', function () {
+            // Recipe cup
             const recipe = document.getElementById('recipe');
             const cup = document.getElementById('recipe-cup-bg');
             if (recipe && cup) {
                 const rect = recipe.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    // Parallax: move slower than scroll
                     const scrolled = Math.max(0, window.innerHeight + rect.top);
-                    // Subtle up/down movement and slight scale
                     const sectionHeight = rect.height || recipe.offsetHeight;
                     const visible = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + sectionHeight)));
                     const scale = 1 + visible * 0.08;
                     cup.style.transform = `translateY(${scrolled * 0.10}px) scale(${scale})`;
                 }
             }
-        });
-
-        // Parallax effect for whymatcha section leaves background
-        window.addEventListener('scroll', function () {
+            // WhyMatcha leaves
             const whymatcha = document.getElementById('whymatcha');
             const leaves = document.getElementById('whymatcha-leaves-bg');
             if (whymatcha && leaves) {
                 const rect = whymatcha.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    // Parallax: move slower than scroll
                     const scrolled = Math.max(0, window.innerHeight + rect.top);
-                    // Subtle up/down movement and slight scale
                     const sectionHeight = rect.height || whymatcha.offsetHeight;
                     const visible = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + sectionHeight)));
                     const scale = 1 + visible * 0.08;
                     leaves.style.transform = `translateY(${scrolled * 0.10}px) scale(${scale})`;
                 }
             }
-        });
-
-        // Parallax effect for about section mountains background
-        window.addEventListener('scroll', function () {
+            // About mountains
             const about = document.getElementById('about');
             const mountains = document.getElementById('about-mountains-bg');
             if (about && mountains) {
                 const rect = about.getBoundingClientRect();
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    // Parallax: move slower than scroll
                     const scrolled = Math.max(0, window.innerHeight + rect.top);
-                    // Subtle up/down movement and slight scale
                     const sectionHeight = rect.height || about.offsetHeight;
                     const visible = Math.min(1, Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + sectionHeight)));
                     const scale = 1.5 + visible * 0.38;
@@ -1093,11 +1071,10 @@
             }
         });
 
-        // Recipe filter chips logic
+        // --- Recipe Filter Chips ---
         document.addEventListener('DOMContentLoaded', function () {
             const filterButtons = document.querySelectorAll('#recipe-filters button');
             const recipeCards = document.querySelectorAll('.recipe-card');
-
             filterButtons.forEach(btn => {
                 btn.addEventListener('click', function () {
                     filterButtons.forEach(b => b.classList.remove('active'));
@@ -1114,39 +1091,10 @@
             });
         });
 
-        // Card click: show modal with details
-        document.querySelectorAll('.recipe-card .card').forEach(card => {
-            card.addEventListener('click', function () {
-                const title = this.querySelector('.card-title').textContent.trim();
-                const data = recipeDetails[title];
-                if (data) {
-                    document.getElementById('recipeModalLabel').textContent = data.title;
-                    document.getElementById('recipeModalBody').innerHTML = `
-                    <div class="row">
-                        <div class="col-md-5 mb-3 mb-md-0">
-                            <img src="${data.img}" alt="${data.title}" class="img-fluid rounded shadow-sm" style="width:100%;">
-                        </div>
-                        <div class="col-md-7">
-                            <p class="mb-1"><strong>Time:</strong> ${data.time}</p>
-                            <p>${data.description}</p>
-                            <h6>Ingredients:</h6>
-                            <ul>${data.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
-                            <h6>Steps:</h6>
-                            <ol>${data.steps.map(s => `<li>${s}</li>`).join('')}</ol>
-                        </div>
-                    </div>
-                `;
-                    const modal = new bootstrap.Modal(document.getElementById('recipeModal'));
-                    modal.show();
-                }
-            });
-        });
-
-        // Product filter chips logic
+        // --- Product Filter Chips ---
         document.addEventListener('DOMContentLoaded', function () {
             const filterButtons = document.querySelectorAll('#product-filters button');
             const productCards = document.querySelectorAll('.product-card');
-
             filterButtons.forEach(btn => {
                 btn.addEventListener('click', function () {
                     filterButtons.forEach(b => b.classList.remove('active'));
@@ -1163,7 +1111,7 @@
             });
         });
 
-        // Recipe details data (add more as needed)
+        // --- Recipe Modal Details ---
         const recipeDetails = {
             "Matcha Latte": {
                 img: "https://cdn.loveandlemons.com/wp-content/uploads/2023/06/iced-matcha-latte-recipe-580x743.jpg",
@@ -1389,6 +1337,32 @@
             }
         };
 
+        document.querySelectorAll('.recipe-card .card').forEach(card => {
+            card.addEventListener('click', function () {
+                const title = this.querySelector('.card-title').textContent.trim();
+                const data = recipeDetails[title];
+                if (data) {
+                    document.getElementById('recipeModalLabel').textContent = data.title;
+                    document.getElementById('recipeModalBody').innerHTML = `
+                    <div class="row">
+                        <div class="col-md-5 mb-3 mb-md-0">
+                            <img src="${data.img}" alt="${data.title}" class="img-fluid rounded shadow-sm" style="width:100%;">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="mb-1"><strong>Time:</strong> ${data.time}</p>
+                            <p>${data.description}</p>
+                            <h6>Ingredients:</h6>
+                            <ul>${data.ingredients.map(i => `<li>${i}</li>`).join('')}</ul>
+                            <h6>Steps:</h6>
+                            <ol>${data.steps.map(s => `<li>${s}</li>`).join('')}</ol>
+                        </div>
+                    </div>
+                `;
+                    const modal = new bootstrap.Modal(document.getElementById('recipeModal'));
+                    modal.show();
+                }
+            });
+        });
     </script>
 </body>
 
