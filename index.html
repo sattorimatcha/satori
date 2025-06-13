@@ -233,7 +233,7 @@
             <div class="container" style="max-width:100vw;">
                 <img src="pictologo@300x.png" alt="Sattori Logo" style="width: 20vw; object-fit:contain;">
                 <h1 class="display-4">
-                    Welcome to <span id="brand-animated" class="fw-bolder">Sattori <span
+                    Welcome to <span id="brand-animated" class="fw-bolder brand-highlight">Sattori <span
                             class="stkaiti-regular">悟り</span></span>
                 </h1>
                 <p class="lead">Experience the rich tradition and flavor of high-quality Japanese matcha.
@@ -984,14 +984,24 @@
 
             // Brand animation
             const brand = document.getElementById('brand-animated');
+
+            // Helper to animate text fade
+            function animateBrandText(newHtml) {
+                if (!brand) return;
+                brand.style.transition = 'opacity 0.25s';
+                brand.style.opacity = '0';
+
+                setTimeout(() => {
+                    brand.innerHTML = newHtml;
+                    brand.style.opacity = '1';
+                }, 250);
+            }
             if (brand) {
                 brand.addEventListener('mouseenter', function () {
-                    brand.innerHTML = 'Awakening <span class="stkaiti-regular">悟り</span>';
-                    brand.classList.add('brand-highlight');
+                    animateBrandText('<strong>Awakening <span class="stkaiti-bold">悟り</span></strong>');
                 });
                 brand.addEventListener('mouseleave', function () {
-                    brand.innerHTML = 'Sattori <span class="stkaiti-regular">悟り</span>';
-                    brand.classList.remove('brand-highlight');
+                    animateBrandText('Sattori <span class="stkaiti-regular">悟り</span>');
                 });
             }
         });
